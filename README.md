@@ -2,7 +2,8 @@ Planckoscope v0.1.0
 
 Written by Chris North for the Planck Royal Society Summer Science Exhibition 2013 as an educational resource.
 
-This application requires Chromoscope v1.4.3 (included here for convenience) 
+This application requires Chromoscope v1.4.3.
+The relevant parts of the Chromoscope source code (1.4.3 subdirectory) are included here for convenience, but have not been altered.
 It will run locally or on a web server. To run locally you will need to download the appropriate tile sets and code.
 
 For more information on Chromoscope, see www.chromoscope.net and github.com/slowe/chromoscope
