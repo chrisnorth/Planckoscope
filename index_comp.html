@@ -1,0 +1,234 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Chromoscope - View the Universe in different wavelengths</title>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="http://www.chromoscope.net/favicon.ico" />
+    <link rel="stylesheet" href="planck-0.1.0/planck.css" type="text/css" />
+    <!--[if IE 6]><link rel="stylesheet" href="1.4.3/style-ie.css" type="text/css" /><![endif]-->
+    <script src="1.4.3/jquery-1.7.1.min.js"></script>
+    <script src="1.4.3/jquery.mousewheel.min.js"></script>
+    <script src="1.4.3/chromoscope.js"></script>
+    <script src="1.4.3/chromoscope-lookup.js"></script>
+    <script src="1.4.3/chromoscope-kml.js"></script>
+    <script src="1.4.3/chromoscope-contextmenu.js"></script>
+    <!--<script src="1.4.3/chromoscope-coordswitcher.js"></script>-->
+    <!--<script type="text/javascript" src="planck-0.1.0/chromoscope-addoverlay.js"></script>-->
+    <script type="text/javascript" src="planck-0.1.0/chromoscope-reregisterkey.js"></script>
+    <script type="text/javascript" src="1.4.3/ui/jquery.ui.core.min.js"></script>
+    <script type="text/javascript" src="1.4.3/ui/jquery.ui.widget.min.js"></script>
+    <script type="text/javascript" src="1.4.3/ui/jquery.ui.mouse.min.js"></script>
+    <script type="text/javascript" src="1.4.3/ui/jquery.ui.sortable.min.js"></script>
+    <script type="text/javascript" src="fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+    <script type="text/javascript" src="planck-0.1.0/planck.js"></script>
+    <script type="text/javascript">
+      <!--
+  	  var kmlUrl = 'kml_files/results.kml';
+	  
+	  // Set up the Chromoscope
+	  $(document).ready(function(){
+	  chromo = $.chromoscope({showintro:false,showshare:false,showabout:false,showlangs:false,showcontext:false});
+	  // The spectral bands should be in order
+	  chromo.addWavelength({key:'d',useasdefault:false,name:'dust',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dust_gal/',tiles_eq:'Dustcol_12000_EQ-tiles/',ext:'jpg',title:'Dust',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
+	  chromo.addWavelength({key:'o',useasdefault:false,name:'co',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/co_gal/',tiles_eq:'COcol_12000_EQ-tiles/',ext:'jpg',title:'Carbon Monoxide',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
+	  chromo.addWavelength({key:'b',useasdefault:true,name:'cmb',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/cmb_gal/',tiles_eq:'CMBcol_12000_EQ-tiles/',ext:'jpg',title:'CMB',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
+	  chromo.addWavelength({key:'l',useasdefault:false,name:'low',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/low_gal/',tiles_eq:'Lowcol_12000_EQ-tiles/',ext:'jpg',title:'Low Frequency',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
+	  chromo.addWavelength({key:'a',useasdefault:false,name:'composite',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/Planck-rgb-lores/',tiles_eq:'Planck_EQ-tiles/',ext:'jpg',title:'Composite',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
+
+	  // Annotation layers will be shown at all wavelengths ('c' and 'p' are reserved for these)
+	  chromo.addAnnotationLayer({opacity:0.4,key:'c',name:'labels_const',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/labels_const2_gal/',tiles_eq:'labels_const_EQ/',ext:'jpg',title:'Constellations',attribution:'Constellation labels'});
+	  chromo.addAnnotationLayer({opacity:0.4,key:'p',name:'labels_planck',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/labels_planck_gal/',ext:'png',title:'Labels',attribution:'Planck Labels'});
+
+	  //add overlay labels (don't use 'c' or 'p')
+	  chromo.addAnnotationLayer({opacity:0.6,key:'u',name:'dust_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dust-overlay_gal/',ext:'jpg',title:'Dust overlay',attribution:'Dust'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'o',name:'low_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/low-overlay_gal/',ext:'jpg',title:'Low frequency overlay',attribution:'Low'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'b',name:'co_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/co_gal/',ext:'jpg',title:'CO overlay',attribution:'CO'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'k',name:'mask_cosm',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/mask_cosm_gal/',ext:'jpg',title:'Mask (cosm.)',attribution:'Mask'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'n',name:'ptsrc',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/ptsrc_gal/',ext:'jpg',title:'Point Sources',attribution:'Point Sources'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'e',name:'lens',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/lens_gal/',ext:'jpg',title:'Lensing',attribution:'Lens'});
+	  // Load the map
+	  chromo.load(setupPlanck);
+	  //chromo.load();
+	  //chromo.readKML(kmlUrl);
+	  
+	  });
+	  
+	  
+	  // --></script>
+    <style>
+      body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+      }
+      <!--a { color: #6666ff; }-->
+    </style>
+    
+  </head>
+  <body>
+    <div class="chromo_title">
+      
+      <a href="http://www.esa.int/planck"><img id="titimg" src="planck_logo.gif"></a>
+      <h1 class="subt"><a href="http://www.chromoscope.net">Chromoscope</a></h1>
+      <!--<h1 class="subt">Component View</h1>-->
+      <h2 class="chromo_version"></h2>
+      <!--<h2>Kiosk Mode</h2>-->
+    </div>
+	
+    <div id="kiosk" style="height:160px">
+      <div id="menu-title">Options</div>
+      <div class="minmax min"></div>
+      <div id="options">
+	<div class="column left">
+	  <div class="option option-switch">
+	    <!--<div id="on-off" class="null"></div>-->
+	    <a href="index_freq.html" title="Switch to view of Planck frequencies">
+	      <div class="label-sm">Show Frequencies</div>
+	    </a>
+	  </div>
+	  <div id="option-const" class="option">
+	    <div id="on-off" class="off"></div>
+	    <div class="arrow-null"></div>
+	    <div class="label">Constellations</div>
+	  </div>
+	  <div id="option-labels" class="option">
+	    <div id="on-off" class="off"></div>
+	    <div class="arrow-null"></div>
+	    <div class="label">Labels</div>
+	  </div>
+	  <div id="option-overlay" class="option">
+	    <div id="on-off" class="null"></div>
+	    <div class="arrow-right"></div>
+	    <div class="label">Overlay</div>
+	  </div>
+	</div>
+      </div>
+    </div>
+    <!--<div id="kiosk-overlay"></div>-->
+
+    <div id="overlay">
+      <div id="menu-title">Overlay</div>
+      <div class="minmax min"></div>
+      <div id="options">
+      </div>
+    </div>
+
+    <div class="chromo_popup overlay_info" id="moreinfo-dust_overlay">
+      <h4 class="info">Dust</h4>
+      <img  src="Dust_cut_small.jpg">
+      <p>Most of the dust seen by Planck is very cold, at temperatures
+	as low as around &minus;260 C, and as a result glows in
+	Planck's high frequencies (particularly 353 GHz and above). It
+	is cold, dense clumps of dust and gas that mark the earliest
+	stages of the birth of stars.</p><p>Although the dust is
+	concentrated in the disc of our Galaxy, Planck has mapped its
+	distribution all over the sky, showing structure at high
+	Galactic latitudes (looking up or down out of the plane) of
+	the Galaxy. Many other galaxies also contain similar dust, but
+	most of them have been removed from the map of dust shown
+	here.</p><p>The emission from the dust seen by Planck must be
+	removed from the maps before cosmological analysis, but is of
+	great interested to astronomers studying star formation in our
+	own Milky Way.</p>
+    </div>
+    <div class="chromo_popup overlay_info" style="display:none" id="moreinfo-low_overlay">
+      <h4 class="info">Low frequency foregrounds</h4>
+      <img  src="Low_cut_small.jpg">
+      <p>The "low frequency" foregrounds include a number of types
+	of emission. Most of it is due to high energy electrons
+	moving through the Galactic magnetic field (a phenomenon
+	called "synchtrotron emission", and the rest is
+	predominantly the emission from slower electrons moving
+	through hot, ionised gas (a phenomenon called
+	"Bremsstrahlung" or "free-free" emission). These phenomena
+	cause strong emission at Planck's lowest frequencies
+	(particularly 70 GHz and below). Most of the emission if
+	located along the plane of our Galaxy, with the other bright
+	spots primarily being galaxies beyond our own.</p><p>A small
+	fraction of the microwave light is not accounted for by
+	either of these methods, and is called "anomalous microwave
+	emission". Planck has previously given a great deal of
+	weight to the favoured theory, in which this enomalous
+	emission is from tiny particles of dust spinning billions of
+	times per second.</p><p>All of this emission is removed from
+	the maps before the cosmological analysis, but it is of
+	great interest to astronomers investigating the properties
+	of our own Galaxy. With more analysis, and the inclusion of
+	more information from other experiments, it should be
+	possible to separate this single "foreground" into its
+	constituent components.</p>
+    </div>
+    <div class="chromo_popup overlay_info" style="display:none" id="moreinfo-co_overlay">
+	<h4 class="info">Carbon Monoxide</h4>
+      <img  src="CO_cut_small.jpg">
+	<p>Most of the cold gas in our Galaxy is made of hydrogen,
+	  which only shines brightly at the frequencies seen by Planck
+	  when it is very hot. However, there are other "tracer" gases
+	  that do emit light at appropriate frequencies, such as
+	  carbon monoxide (CO). By carefully looking for the signs of
+	  emission by CO at 115, 230 and 345 GHz, Planck has produced
+	  the best all-sky map of this gas throughout our
+	  Galaxy.</p><p>The carbon monoxide is, as expected, largely
+	  concentrated in the Galactic Plane, though there are a
+	  number of molecular clouds which shine brightly at these
+	  frequencies. Planck's sensititivity has allowed it to detect
+	  some very diffuse clouds that had not been seen
+	  before.</p><p>The dark regions near the ecliptic poles are
+	  because Planck's maps are more sensitive in these regions,
+	  reducing the noise, or "graininess", in the images. The
+	  emission from carbon monoxide must be removed from Planck's
+	  maps before the comsological analysis, since any
+	  contamination could skew the results.</p>
+    </div>
+
+    <div class="chromo_popup overlay_info" style="display:none" id="moreinfo-mask_cosm">
+      <h4 class="info">Sky Mask</h4>
+      <img  src="Mask_cosm_cut_small.jpg">
+      <p>To do the cosmological analysis, any "contamination" from
+	sources of light other than the CMB (primarily our Galaxy and
+	others) must be removed. Although the Planck data can be used
+	to make maps of the various other sources of light and correct
+	for it, this is much more difficult to do in the centre of our
+	Galaxy, and near the brightest sources of light around the
+	rest of the sky. The "sky mask" shows the areas of sky that
+	are not considered when doing the cosmological analysis, which
+	accounts for just over half the sky.</p>
+    </div>
+
+    <div class="chromo_popup overlay_info" style="display:none" id="moreinfo-ptsrc">
+      <h4 class="info">Compact Sources</h4>
+      <img  src="PtSrc_cut_small.jpg">
+      <p>As well as the light from the Cosmic Microwave Background, and from diffuse dust annd gas in our own Galaxy, Planck also sees seemingly small objects dotted all over the sky. Some of these really are small, such as clumps of gas and dust in the process of forming stars. But others are simply very far away, such as other galaxies.</p>
+      <p>The map of sources shown here is representative of the full range of sources, showing those seen at frequencies of 30GHz (red), 143 GHz (green) and 857 GHz (blue). The size of the dots is a measure of Planck's resolution at the different frequencies (the resolution is better at higher frequencies).</p>
+      <p>The 30GHz sources are distributed over the whole sky, indicating that they are generally distant galaxies. The galaxies seen by Planck at this frequency are emitting large amounts of radio waves, often due to the activity of the central black hole.</p>
+      <p>By contrast, the sources seen at 857 GHz are concentrated in the plane of our Galaxy, with a few in the Large and Small Magellanic Clouds and the Andromeda Galaxy (add the "Labels" to see where these are. These are clumps of dust, either in our Galaxy or in nearby ones.</p>
+      <p>To do the comological analysis, most of these source have to be taken into account, either by ignoring that relevant patch of the sky (see the "Sky Mask") or by carefully removing the light associated with each source from the data before the full analysis is performed.</p>
+    </div>
+
+    <div class="chromo_popup overlay_info" style="display:none" id="moreinfo-lens">
+      <h4 class="info">Lensing</h4>
+      <img  src="Lens_cut_small.jpg">
+      <p>As the light from the CMB travelled through the Universe
+	over the course of 13.8 billion years, most of it has been
+	completely unimpeded. But there are very subtle effects caused
+	by concentrations of mass in the Universe - most of which is
+	in the form of mysterious dark matter. The gravitational pull
+	of the mass distorts the image of the CMB, and these
+	distortions can be mapped over the sky. These distortions are
+	shown here, with large concentrations of mass showing up
+	brighter.</p>
+      <p>The analysis depends on the assumptions about the patterns in
+	the Cosmic Microwave Background itself, namely that on average
+	all the hot-spots and cold-spots are circular. While that is
+	true when averaging over the whole sky, it might not be the
+	case when averaging over smaller regions, and some of the
+	distortions are due to inherent variations in the original CMB
+	light. There are also regions, particlarly in the Galactic
+	Plane, but also around a few other objects, where the
+	foregound light is so strong that it is not possible to
+	calculate the mass distribution.</p>
+    </div>
+
+  </body>
+</html>
