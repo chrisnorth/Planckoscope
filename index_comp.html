@@ -33,7 +33,7 @@
 	  chromo.addWavelength({key:'o',useasdefault:false,name:'co',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/co_gal/',tiles_eq:'COcol_12000_EQ-tiles/',ext:'jpg',title:'Carbon Monoxide',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'b',useasdefault:true,name:'cmb',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/cmb_gal/',tiles_eq:'CMBcol_12000_EQ-tiles/',ext:'jpg',title:'CMB',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'l',useasdefault:false,name:'low',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/low_gal/',tiles_eq:'Lowcol_12000_EQ-tiles/',ext:'jpg',title:'Low Frequency',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
-	  chromo.addWavelength({key:'a',useasdefault:false,name:'composite',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/Planck-rgb-lores/',tiles_eq:'Planck_EQ-tiles/',ext:'jpg',title:'Composite',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
+	  chromo.addWavelength({key:'a',useasdefault:false,name:'composite',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/Planck-rgb-hires/',tiles_eq:'Planck_EQ-tiles/',ext:'jpg',title:'Composite',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 
 	  // Annotation layers will be shown at all wavelengths ('c' and 'p' are reserved for these)
 	  chromo.addAnnotationLayer({opacity:0.4,key:'c',name:'labels_const',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/labels_const2_gal/',tiles_eq:'labels_const_EQ/',ext:'jpg',title:'Constellations',attribution:'Constellation labels'});
@@ -41,8 +41,8 @@
 
 	  //add overlay labels (don't use 'c' or 'p')
 	  chromo.addAnnotationLayer({opacity:0.6,key:'u',name:'dust_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dust-overlay_gal/',ext:'jpg',title:'Dust overlay',attribution:'Dust'});
-	  chromo.addAnnotationLayer({opacity:0.6,key:'o',name:'low_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/low-overlay_gal/',ext:'jpg',title:'Low frequency overlay',attribution:'Low'});
-	  chromo.addAnnotationLayer({opacity:0.6,key:'b',name:'co_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/co_gal/',ext:'jpg',title:'CO overlay',attribution:'CO'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'w',name:'low_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/low-overlay_gal/',ext:'jpg',title:'Low frequency overlay',attribution:'Low'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'r',name:'co_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/co_gal/',ext:'jpg',title:'CO overlay',attribution:'CO'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'k',name:'mask_cosm',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/mask_cosm_gal/',ext:'jpg',title:'Mask (cosm.)',attribution:'Mask'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'n',name:'ptsrc',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/ptsrc_gal/',ext:'jpg',title:'Point Sources',attribution:'Point Sources'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'e',name:'lens',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/lens_gal/',ext:'jpg',title:'Lensing',attribution:'Lens'});

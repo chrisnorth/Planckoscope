@@ -200,7 +200,7 @@ function setupPlanck(){
 	    changeOpacity(+10);
 	});
 
-	toggleOverlay();
+	//toggleOverlay();
 
 
     }

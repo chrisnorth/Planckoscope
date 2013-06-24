@@ -1,0 +1,544 @@
+2013-03-31 20:19:55,326 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+MAP.NSIDE
+  OrderBy: MAP.NSIDE asc
+  GroupBy: MAP.NSIDE
+2013-03-31 20:19:55,374 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.remoting.PLAServiceProxy] - [ActionHandler.getAppContext] Application Context file: classpath:applicationContext.xml
+2013-03-31 20:19:55,597 [javawsApplicationMain] [INFO ] [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ef3212: startup date [Sun Mar 31 19:19:55 GMT+00:00 2013]; root of context hierarchy
+2013-03-31 20:19:55,723 [javawsApplicationMain] [INFO ] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2013-03-31 20:19:56,229 [javawsApplicationMain] [INFO ] [org.springframework.beans.factory.support.DefaultListableBeanFactory] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16e1782: defining beans [httpInvokerProxy,plaServiceProxy]; root of factory hierarchy
+2013-03-31 20:19:59,680 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 5
+2013-03-31 20:19:59,682 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+FREQUENCY.VALUE
+  OrderBy: FREQUENCY.VALUE asc
+  GroupBy: FREQUENCY.VALUE
+2013-03-31 20:19:59,813 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 9
+2013-03-31 20:19:59,814 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+COMPONENT_MAP.TYPE
+  OrderBy: COMPONENT_MAP.TYPE asc
+  GroupBy: COMPONENT_MAP.TYPE
+2013-03-31 20:19:59,949 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 9
+2013-03-31 20:19:59,950 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+COMPONENT_MAP.METHOD
+  OrderBy: COMPONENT_MAP.METHOD asc
+  GroupBy: COMPONENT_MAP.METHOD
+2013-03-31 20:20:00,081 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 6
+2013-03-31 20:20:00,082 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+ANCILLARY_MAP.TYPE
+  OrderBy: ANCILLARY_MAP.TYPE asc
+  GroupBy: ANCILLARY_MAP.TYPE
+2013-03-31 20:20:00,212 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 11
+2013-03-31 20:20:00,213 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+MAP_PERIOD.NAME
+  OrderBy: MAP_PERIOD.NAME asc
+  GroupBy: MAP_PERIOD.NAME
+2013-03-31 20:20:00,343 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 5
+2013-03-31 20:20:00,344 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[PROVENANCE]
+  OrderBy: PROVENANCE.PROVENANCE_OID asc
+2013-03-31 20:20:00,491 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 3
+2013-03-31 20:20:00,492 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[SOURCE_LIST]
+  Where: CATALOGUE.NAME EQ LiteralItem [type=STRING, value=ERCSC_1.3.1]
+  OrderBy: SOURCE_LIST.NAME asc
+2013-03-31 20:20:00,674 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 11
+2013-03-31 20:20:00,675 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[SOURCE_LIST]
+  Where: CATALOGUE.NAME EQ LiteralItem [type=STRING, value=PCCS_0.1]
+  OrderBy: SOURCE_LIST.NAME asc
+2013-03-31 20:20:00,826 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 10
+2013-03-31 20:20:00,827 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[SOURCE_LIST]
+  Where: CATALOGUE.NAME EQ LiteralItem [type=STRING, value=PCCS_0.2]
+  OrderBy: SOURCE_LIST.NAME asc
+2013-03-31 20:20:00,991 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 9
+2013-03-31 20:20:00,993 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[SOURCE_LIST]
+  Where: CATALOGUE.NAME EQ LiteralItem [type=STRING, value=PCCS_1.0]
+  OrderBy: SOURCE_LIST.NAME asc
+2013-03-31 20:20:01,130 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 9
+2013-03-31 20:20:01,131 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[SOURCE_LIST]
+  Where: CATALOGUE.NAME EQ LiteralItem [type=STRING, value=PCCS_SZ]
+  OrderBy: SOURCE_LIST.NAME asc
+2013-03-31 20:20:01,271 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 4
+2013-03-31 20:20:01,272 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[SURVEY]
+  OrderBy: SURVEY.NUMBER asc
+2013-03-31 20:20:01,416 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 6
+2013-03-31 20:20:01,417 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[OD]
+  OrderBy: OD.OD_NUMBER asc
+2013-03-31 20:20:02,282 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 1217
+2013-03-31 20:20:02,292 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+EVENT_TYPE.NAME
+  OrderBy: EVENT_TYPE.NAME asc
+  GroupBy: EVENT_TYPE.NAME
+2013-03-31 20:20:02,464 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 22
+2013-03-31 20:20:02,465 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[POSH]
+  Where: POSH.FILE_TYPE EQ LiteralItem [type=STRING, value=POSH_CATALOG]
+2013-03-31 20:20:02,603 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 1
+2013-03-31 20:20:02,606 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[OPERATIONAL_FILE_TYPE]
+  OrderBy: OPERATIONAL_FILE_TYPE.NAME asc
+2013-03-31 20:20:02,747 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 13
+2013-03-31 20:20:02,757 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to do anonymous login anonymous
+2013-03-31 20:20:03,737 [javawsApplicationMain] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Loggin task ok for: UserTO [getUserId()=null, getUserName()=anonymous, getName()=null, getOrigin()=UI, getSurname()=null, getInstitute()=null, getInternetSite()=82.13.2.29, getDnsName()=chris-t510, getAddress1()=null, getAddress2()=null, getTown()=null, getCountry()=null, getState()=null, getZipCode()=null, getEmail()=null, getEnvironment()=Linux, getPhoneNumber()=null, getFax()=null]
+Releases: PR1;ERCSC-A
+Catalogues: ERCSC_1.3.1;PCCS_1.0;PCCS_SZ
+Posh Allow: true
+Op Files Allow: true
+Anc Data Allow: true
+Cosmo Allow: true
+2013-03-31 20:20:04,119 [AWT-EventQueue-0] [INFO ] [esac.archive.absi.interfaces.cl.uiskeleton.controller.UIConfig] - UI config file doesn't exist, using default values for layout.
+2013-03-31 20:20:05,198 [AWT-EventQueue-0] [ERROR] [esac.archive.pla.cl.ui.view.search.LegacySearchView] - Error creating conf Info panel for Legacy Catalogue.
+2013-03-31 20:20:05,807 [AWT-EventQueue-0] [ERROR] [esac.archive.pla.cl.ui.view.search.LegacySearchView] - Error creating conf Info panel for Legacy Catalogue.
+2013-03-31 20:20:06,332 [Thread-13] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[CATALOGUE]
+  Where: CATALOGUE.NAME EQ LiteralItem [type=STRING, value=ERCSC_1.3.1]
+  OrderBy: RELEASE.DATE desc
+2013-03-31 20:20:06,466 [Thread-13] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 1
+2013-03-31 20:20:06,806 [Thread-14] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[SOURCE_LIST]
+  OrderBy: SOURCE_LIST.NAME asc
+2013-03-31 20:20:07,070 [Thread-14] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 43
+2013-03-31 20:20:07,365 [Thread-15] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[POSH]
+  Where: POSH.FILE_TYPE EQ LiteralItem [type=STRING, value=POSH_CATALOG]
+  OrderBy: RELEASE.DATE desc
+2013-03-31 20:20:07,391 [Thread-16] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[EVENT_FLAG]
+  OrderBy: EVENT_FLAG.NAME asc
+2013-03-31 20:20:07,409 [Thread-16] [INFO ] [com.whirlycott.cache.CacheManager] - Creating new CacheManager singleton
+2013-03-31 20:20:07,411 [Thread-16] [WARN ] [com.whirlycott.cache.CacheManager] - Could not load /whirlycache.xml file. Falling back to defaults.
+2013-03-31 20:20:07,492 [Thread-15] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 1
+2013-03-31 20:20:07,496 [Thread-15] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+MIN([EVENT.START_TIME_UTC]):null [Alias: AS eventTimeMin].; MAX([EVENT.END_TIME_UTC]):null [Alias: AS eventTimeMax].
+2013-03-31 20:20:07,583 [Thread-16] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 32
+2013-03-31 20:20:07,639 [Thread-15] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 1
+2013-03-31 20:20:07,827 [Thread-17] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+FREQUENCY.VALUE
+  OrderBy: FREQUENCY.VALUE asc
+  GroupBy: FREQUENCY.VALUE
+2013-03-31 20:20:07,828 [Thread-18] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[DETECTOR_SET]
+  Where: DETECTOR_SET.NAME NE LiteralItem [type=STRING, value=no_detector]
+  OrderBy: FREQUENCY.VALUE asc
+2013-03-31 20:20:07,834 [AWT-EventQueue-0] [ERROR] [esac.archive.pla.cl.ui.validator.search.EffectiveBeamsValidator] - Exception checking max number of pixels within the roi
+java.lang.NullPointerException
+	at esac.archive.pla.cl.ui.model.search.GeometryModel.getShapeObject(GeometryModel.java:283)
+	at esac.archive.pla.cl.ui.model.search.EffectiveBeamsSearchModel.getCircleShape(EffectiveBeamsSearchModel.java:433)
+	at esac.archive.pla.cl.ui.validator.search.EffectiveBeamsValidator.validate(EffectiveBeamsValidator.java:83)
+	at esac.archive.absi.interfaces.cl.uiskeleton.model.PresentationModelView.updateValidationResult(PresentationModelView.java:84)
+	at esac.archive.absi.interfaces.cl.uiskeleton.model.PresentationModelView.<init>(PresentationModelView.java:67)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.AbstractValidatedView.<init>(AbstractValidatedView.java:42)
+	at esac.archive.pla.cl.ui.view.component.EffectiveBeamsSearchPanelItem.<init>(EffectiveBeamsSearchPanelItem.java:88)
+	at esac.archive.pla.cl.ui.view.search.MapSearchView.createMainPanel(MapSearchView.java:128)
+	at esac.archive.pla.cl.ui.view.search.MapSearchView.initViewComponent(MapSearchView.java:102)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.AbstractValidatedView.<init>(AbstractValidatedView.java:51)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.AbstractValidatedView.<init>(AbstractValidatedView.java:66)
+	at esac.archive.pla.cl.ui.view.search.MapSearchView.<init>(MapSearchView.java:88)
+	at esac.archive.pla.cl.ui.controller.UIPla.createViewMap(UIPla.java:321)
+	at esac.archive.absi.interfaces.cl.uiskeleton.controller.AbstractUIArchive.createRootWindow(AbstractUIArchive.java:141)
+	at esac.archive.absi.interfaces.cl.uiskeleton.controller.AbstractUIArchive.<init>(AbstractUIArchive.java:99)
+	at esac.archive.pla.cl.ui.controller.UIPla.<init>(UIPla.java:171)
+	at esac.archive.pla.cl.ui.controller.UIPla$1.run(UIPla.java:253)
+	at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$000(Unknown Source)
+	at java.awt.EventQueue$1.run(Unknown Source)
+	at java.awt.EventQueue$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+2013-03-31 20:20:07,848 [AWT-EventQueue-0] [ERROR] [esac.archive.pla.cl.ui.validator.search.EffectiveBeamsValidator] - Exception checking max number of pixels within the roi
+java.lang.NullPointerException
+	at esac.archive.pla.cl.ui.model.search.GeometryModel.getShapeObject(GeometryModel.java:283)
+	at esac.archive.pla.cl.ui.model.search.EffectiveBeamsSearchModel.getCircleShape(EffectiveBeamsSearchModel.java:433)
+	at esac.archive.pla.cl.ui.validator.search.EffectiveBeamsValidator.validate(EffectiveBeamsValidator.java:83)
+	at esac.archive.absi.interfaces.cl.uiskeleton.model.PresentationModelView.updateValidationResult(PresentationModelView.java:84)
+	at esac.archive.absi.interfaces.cl.uiskeleton.model.PresentationModelView.access$100(PresentationModelView.java:49)
+	at esac.archive.absi.interfaces.cl.uiskeleton.model.PresentationModelView$ValidationUpdateHandler.propertyChange(PresentationModelView.java:94)
+	at java.beans.PropertyChangeSupport.firePropertyChange(Unknown Source)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:198)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:155)
+	at java.beans.PropertyChangeSupport.firePropertyChange(Unknown Source)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:233)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:176)
+	at com.jgoodies.binding.beans.Model.firePropertyChange(Model.java:430)
+	at esac.archive.pla.cl.ui.model.search.EffectiveBeamsSearchModel.setFrequency(EffectiveBeamsSearchModel.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.jgoodies.binding.beans.BeanUtils.setValue(BeanUtils.java:621)
+	at com.jgoodies.binding.beans.BeanAdapter.setValue0(BeanAdapter.java:1209)
+	at com.jgoodies.binding.beans.BeanAdapter.access$600(BeanAdapter.java:279)
+	at com.jgoodies.binding.beans.BeanAdapter$SimplePropertyAdapter.setValue(BeanAdapter.java:1408)
+	at com.jgoodies.binding.list.SelectionInList$SelectionIndexChangeHandler.propertyChange(SelectionInList.java:1635)
+	at java.beans.PropertyChangeSupport.firePropertyChange(Unknown Source)
+	at java.beans.PropertyChangeSupport.firePropertyChange(Unknown Source)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:198)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:155)
+	at java.beans.PropertyChangeSupport.firePropertyChange(Unknown Source)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:233)
+	at com.jgoodies.binding.beans.Model.firePropertyChange(Model.java:458)
+	at com.jgoodies.binding.value.AbstractValueModel.fireValueChange(AbstractValueModel.java:129)
+	at com.jgoodies.binding.value.ValueHolder.setValue(ValueHolder.java:233)
+	at com.jgoodies.binding.value.ValueHolder.setValue(ValueHolder.java:181)
+	at com.jgoodies.binding.list.SelectionInList.setSelectionIndex(SelectionInList.java:1041)
+	at com.jgoodies.binding.list.SelectionInList.setSelection(SelectionInList.java:977)
+	at com.jgoodies.binding.list.SelectionInList.setValue(SelectionInList.java:1195)
+	at com.jgoodies.binding.adapter.ComboBoxAdapter.setSelectedItem(ComboBoxAdapter.java:295)
+	at javax.swing.JComboBox.setSelectedItem(Unknown Source)
+	at javax.swing.JComboBox.setSelectedIndex(Unknown Source)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.helper.ViewUtils.setupComboBox(ViewUtils.java:368)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.helper.ComponentFactory.createComboBox(ComponentFactory.java:272)
+	at esac.archive.pla.cl.ui.view.PlaViewUtils.createComboBox(PlaViewUtils.java:201)
+	at esac.archive.pla.cl.ui.view.component.EffectiveBeamsSearchPanelItem.createCombos(EffectiveBeamsSearchPanelItem.java:244)
+	at esac.archive.pla.cl.ui.view.component.EffectiveBeamsSearchPanelItem.createMainPanel(EffectiveBeamsSearchPanelItem.java:131)
+	at esac.archive.pla.cl.ui.view.component.EffectiveBeamsSearchPanelItem.initViewComponent(EffectiveBeamsSearchPanelItem.java:105)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.AbstractValidatedView.<init>(AbstractValidatedView.java:51)
+	at esac.archive.pla.cl.ui.view.component.EffectiveBeamsSearchPanelItem.<init>(EffectiveBeamsSearchPanelItem.java:88)
+	at esac.archive.pla.cl.ui.view.search.MapSearchView.createMainPanel(MapSearchView.java:128)
+	at esac.archive.pla.cl.ui.view.search.MapSearchView.initViewComponent(MapSearchView.java:102)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.AbstractValidatedView.<init>(AbstractValidatedView.java:51)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.AbstractValidatedView.<init>(AbstractValidatedView.java:66)
+	at esac.archive.pla.cl.ui.view.search.MapSearchView.<init>(MapSearchView.java:88)
+	at esac.archive.pla.cl.ui.controller.UIPla.createViewMap(UIPla.java:321)
+	at esac.archive.absi.interfaces.cl.uiskeleton.controller.AbstractUIArchive.createRootWindow(AbstractUIArchive.java:141)
+	at esac.archive.absi.interfaces.cl.uiskeleton.controller.AbstractUIArchive.<init>(AbstractUIArchive.java:99)
+	at esac.archive.pla.cl.ui.controller.UIPla.<init>(UIPla.java:171)
+	at esac.archive.pla.cl.ui.controller.UIPla$1.run(UIPla.java:253)
+	at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$000(Unknown Source)
+	at java.awt.EventQueue$1.run(Unknown Source)
+	at java.awt.EventQueue$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+2013-03-31 20:20:07,852 [AWT-EventQueue-0] [ERROR] [esac.archive.pla.cl.ui.validator.search.EffectiveBeamsValidator] - Exception checking max number of pixels within the roi
+java.lang.NullPointerException
+	at esac.archive.pla.cl.ui.model.search.GeometryModel.getShapeObject(GeometryModel.java:283)
+	at esac.archive.pla.cl.ui.model.search.EffectiveBeamsSearchModel.getCircleShape(EffectiveBeamsSearchModel.java:433)
+	at esac.archive.pla.cl.ui.validator.search.EffectiveBeamsValidator.validate(EffectiveBeamsValidator.java:83)
+	at esac.archive.absi.interfaces.cl.uiskeleton.model.PresentationModelView.updateValidationResult(PresentationModelView.java:84)
+	at esac.archive.absi.interfaces.cl.uiskeleton.model.PresentationModelView.access$100(PresentationModelView.java:49)
+	at esac.archive.absi.interfaces.cl.uiskeleton.model.PresentationModelView$ValidationUpdateHandler.propertyChange(PresentationModelView.java:94)
+	at java.beans.PropertyChangeSupport.firePropertyChange(Unknown Source)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:198)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:155)
+	at java.beans.PropertyChangeSupport.firePropertyChange(Unknown Source)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:233)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:176)
+	at com.jgoodies.binding.beans.Model.firePropertyChange(Model.java:430)
+	at esac.archive.pla.cl.ui.model.search.EffectiveBeamsSearchModel.setNside(EffectiveBeamsSearchModel.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.jgoodies.binding.beans.BeanUtils.setValue(BeanUtils.java:621)
+	at com.jgoodies.binding.beans.BeanAdapter.setValue0(BeanAdapter.java:1209)
+	at com.jgoodies.binding.beans.BeanAdapter.access$600(BeanAdapter.java:279)
+	at com.jgoodies.binding.beans.BeanAdapter$SimplePropertyAdapter.setValue(BeanAdapter.java:1408)
+	at com.jgoodies.binding.list.SelectionInList$SelectionIndexChangeHandler.propertyChange(SelectionInList.java:1635)
+	at java.beans.PropertyChangeSupport.firePropertyChange(Unknown Source)
+	at java.beans.PropertyChangeSupport.firePropertyChange(Unknown Source)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:198)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:155)
+	at java.beans.PropertyChangeSupport.firePropertyChange(Unknown Source)
+	at com.jgoodies.binding.beans.ExtendedPropertyChangeSupport.firePropertyChange(ExtendedPropertyChangeSupport.java:233)
+	at com.jgoodies.binding.beans.Model.firePropertyChange(Model.java:458)
+	at com.jgoodies.binding.value.AbstractValueModel.fireValueChange(AbstractValueModel.java:129)
+	at com.jgoodies.binding.value.ValueHolder.setValue(ValueHolder.java:233)
+	at com.jgoodies.binding.value.ValueHolder.setValue(ValueHolder.java:181)
+	at com.jgoodies.binding.list.SelectionInList.setSelectionIndex(SelectionInList.java:1041)
+	at com.jgoodies.binding.list.SelectionInList.setSelection(SelectionInList.java:977)
+	at com.jgoodies.binding.list.SelectionInList.setValue(SelectionInList.java:1195)
+	at com.jgoodies.binding.adapter.ComboBoxAdapter.setSelectedItem(ComboBoxAdapter.java:295)
+	at javax.swing.JComboBox.setSelectedItem(Unknown Source)
+	at javax.swing.JComboBox.setSelectedIndex(Unknown Source)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.helper.ViewUtils.setupComboBox(ViewUtils.java:368)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.helper.ComponentFactory.createComboBox(ComponentFactory.java:272)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.helper.ComponentFactory.createComboBox(ComponentFactory.java:306)
+	at esac.archive.pla.cl.ui.view.component.EffectiveBeamsSearchPanelItem.createCombos(EffectiveBeamsSearchPanelItem.java:252)
+	at esac.archive.pla.cl.ui.view.component.EffectiveBeamsSearchPanelItem.createMainPanel(EffectiveBeamsSearchPanelItem.java:131)
+	at esac.archive.pla.cl.ui.view.component.EffectiveBeamsSearchPanelItem.initViewComponent(EffectiveBeamsSearchPanelItem.java:105)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.AbstractValidatedView.<init>(AbstractValidatedView.java:51)
+	at esac.archive.pla.cl.ui.view.component.EffectiveBeamsSearchPanelItem.<init>(EffectiveBeamsSearchPanelItem.java:88)
+	at esac.archive.pla.cl.ui.view.search.MapSearchView.createMainPanel(MapSearchView.java:128)
+	at esac.archive.pla.cl.ui.view.search.MapSearchView.initViewComponent(MapSearchView.java:102)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.AbstractValidatedView.<init>(AbstractValidatedView.java:51)
+	at esac.archive.absi.interfaces.cl.uiskeleton.view.AbstractValidatedView.<init>(AbstractValidatedView.java:66)
+	at esac.archive.pla.cl.ui.view.search.MapSearchView.<init>(MapSearchView.java:88)
+	at esac.archive.pla.cl.ui.controller.UIPla.createViewMap(UIPla.java:321)
+	at esac.archive.absi.interfaces.cl.uiskeleton.controller.AbstractUIArchive.createRootWindow(AbstractUIArchive.java:141)
+	at esac.archive.absi.interfaces.cl.uiskeleton.controller.AbstractUIArchive.<init>(AbstractUIArchive.java:99)
+	at esac.archive.pla.cl.ui.controller.UIPla.<init>(UIPla.java:171)
+	at esac.archive.pla.cl.ui.controller.UIPla$1.run(UIPla.java:253)
+	at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$000(Unknown Source)
+	at java.awt.EventQueue$1.run(Unknown Source)
+	at java.awt.EventQueue$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+2013-03-31 20:20:07,952 [Thread-17] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 9
+2013-03-31 20:20:08,169 [Thread-20] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[DETECTOR_SET]
+  Where: DETECTOR_SET.NAME NE LiteralItem [type=STRING, value=no_detector]
+  OrderBy: FREQUENCY.VALUE asc
+2013-03-31 20:20:08,256 [Thread-18] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 141
+2013-03-31 20:20:08,576 [Thread-20] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 141
+2013-03-31 20:20:10,141 [AWT-EventQueue-0] [INFO ] [com.whirlycott.cache.CacheDecorator] - Clearing cache
+2013-03-31 20:20:10,162 [Thread-22] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[SOURCE_LIST]
+  Where: (CATALOGUE.CATALOGUE_OID EQ LiteralItem [type=LONG, value=100] OR CATALOGUE.CATALOGUE_OID EQ LiteralItem [type=LONG, value=550] OR CATALOGUE.CATALOGUE_OID EQ LiteralItem [type=LONG, value=5])
+  OrderBy: SOURCE_LIST.NAME asc
+2013-03-31 20:20:10,243 [Thread-13] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to perform query: 
+  Select: 
+Entity[SOURCE_LIST]
+  Where: (CATALOGUE.CATALOGUE_OID EQ LiteralItem [type=LONG, value=100] OR CATALOGUE.CATALOGUE_OID EQ LiteralItem [type=LONG, value=550] OR CATALOGUE.CATALOGUE_OID EQ LiteralItem [type=LONG, value=5])
+  OrderBy: SOURCE_LIST.NAME asc
+2013-03-31 20:20:10,270 [AWT-EventQueue-0] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - [ActionHandler]About to write access log
+2013-03-31 20:20:10,415 [Thread-22] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 24
+2013-03-31 20:20:10,444 [AWT-EventQueue-0] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Access log written ok
+2013-03-31 20:20:10,509 [Thread-13] [INFO ] [esac.archive.pla.cl.ui.helper.ActionHandler] - Query performed Ok. Number of results: 24
+2013-03-31 20:20:37,474 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:21:07,476 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:21:37,477 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:22:07,478 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:22:37,480 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:23:07,481 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:23:37,483 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:24:07,485 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:24:37,486 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:25:07,488 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:25:37,489 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:26:07,491 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:26:37,493 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:27:07,494 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:27:37,495 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:28:07,497 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:28:37,498 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:29:07,499 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:29:37,500 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:30:07,502 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:30:37,503 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:31:07,504 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:31:37,506 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:32:07,507 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:32:37,508 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:33:07,510 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:33:37,511 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:34:07,512 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:34:37,513 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:35:07,515 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:35:37,516 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:36:07,517 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:36:37,518 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:37:07,519 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:37:37,521 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:38:07,522 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:38:37,523 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:39:07,525 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:39:37,526 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:40:07,527 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:40:37,529 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:41:07,530 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:41:37,531 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:42:07,532 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:42:37,533 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:43:07,534 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:43:37,536 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:44:07,537 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:44:37,538 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:45:07,540 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:45:37,541 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:46:07,542 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:46:37,544 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:47:07,545 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:47:37,551 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:48:07,553 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:48:37,554 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:49:07,556 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:49:37,557 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:50:07,559 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:50:37,560 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:51:07,561 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:51:37,562 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:52:07,563 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:52:37,565 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:53:07,566 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:53:37,567 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:54:07,568 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:54:37,569 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:55:07,571 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:55:37,572 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:56:07,573 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:56:37,574 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:57:07,575 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:57:37,576 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:58:07,578 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:58:37,580 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:59:07,581 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 20:59:37,583 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:00:07,584 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:00:37,585 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:01:07,586 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:01:37,587 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:02:07,589 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:02:37,590 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:03:07,591 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:03:37,593 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:04:07,594 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:04:37,595 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:05:07,597 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:05:37,599 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:06:07,600 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:06:37,601 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:07:07,603 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:07:37,604 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:08:07,605 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:08:37,606 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:09:07,607 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:09:37,609 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:10:07,610 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:10:37,611 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:11:07,612 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:11:37,613 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:12:07,615 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:12:37,616 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:13:07,617 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:13:37,618 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:14:07,619 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:14:37,620 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:15:07,622 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:15:37,623 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:16:07,624 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:16:37,625 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:17:07,626 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:17:37,627 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:18:07,628 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:18:37,630 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:19:07,631 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:19:37,632 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:20:07,634 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:20:37,635 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:21:07,636 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:21:37,637 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:22:07,639 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:22:37,640 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:23:07,641 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:23:37,642 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:24:07,644 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:24:37,645 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:25:07,646 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:25:37,647 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:26:07,649 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:26:37,650 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:27:07,651 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:27:37,652 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:28:07,653 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:28:37,655 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:29:07,656 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:29:37,657 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:30:07,658 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:30:37,659 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:31:07,661 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:31:37,662 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:32:07,663 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:32:37,664 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:33:07,665 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:33:37,666 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:34:07,668 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:34:37,669 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:35:07,670 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:35:37,672 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:36:07,673 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:36:37,674 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:37:07,675 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:37:37,676 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:38:07,678 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:38:37,679 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:39:07,680 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:39:37,681 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:40:07,682 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:40:37,684 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:41:07,685 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:41:37,686 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:42:07,687 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:42:37,688 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:43:07,689 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:43:37,691 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:44:07,692 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:44:37,693 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:45:07,694 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:45:37,695 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:46:07,696 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:46:37,697 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:47:07,698 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:47:37,700 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:48:07,701 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:48:37,702 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:49:07,704 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:49:37,705 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:50:07,706 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:50:37,707 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:51:07,709 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:51:37,710 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:52:07,711 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:52:37,712 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:53:07,713 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:53:37,714 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:54:07,715 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:54:37,716 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:55:07,717 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:55:37,719 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
+2013-03-31 21:56:07,720 [Whirlycache Tuner ( default )] [INFO ] [com.whirlycott.cache.CacheDecorator] - Size: 0; Questions: 2; Hits: 0; Adaptive r/w ratio: 0%; Total hitrate: 0%
