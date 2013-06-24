@@ -1,5 +1,7 @@
 Planckoscope v0.1.0
 
+currently available at http://chromoscope.net/planck/
+
 Written by Chris North for the Planck Royal Society Summer Science Exhibition 2013 as an educational resource.
 
 This application requires Chromoscope v1.4.3.
