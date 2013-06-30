@@ -24,6 +24,8 @@
 
 function setupPlanck(){    
     $('#kiosk').disableTextSelect();
+    logging=true;
+
     //chromo.buildHelp(true);
     //animate options panel
     //process overlays
@@ -34,6 +36,7 @@ function setupPlanck(){
     //re-register keys
     //*******************
     chromo.reregisterKey('.',function(){
+	//reregister hide keys ton include kiosk and overlay
 	$(this.body+" h1").toggle();
 	$(this.body+" h2").toggle();
 	$(this.body+" .chromo_message").hide();
@@ -47,10 +50,28 @@ function setupPlanck(){
 	$(this.body+" #overlay").toggle();
     });
 
+    chromo.reregisterKey("[",function(){
+	//decrease wavelength by one step
+	this.changeWavelength(-0.25);
+	this.checkTiles();	
+	this.changeWavelength(-0.25);
+	this.checkTiles();
+	if (logging) console.log('decrease wavelength by 1 step');
+    }).reregisterKey("]",function(){
+	//increase wavelength by one step
+	this.changeWavelength(+0.25);
+	this.checkTiles();
+	this.changeWavelength(+0.25);
+	this.checkTiles();
+	if (logging) console.log('increase wavelength by 1 step');
+    });
+
     chromo.reregisterKey(45,function(){ // user presses the - (45 for Firefox)
+	//decrease magnification
 	this.changeMagnification(-1);
     });
     chromo.reregisterKey('c',function(){
+	//toggle constellation layers
 	chromo.toggleAnnotationsByName('c');
 	chromo.checkTiles(true)
 	//console.log('toggled labels');
@@ -61,6 +82,7 @@ function setupPlanck(){
     },'toggle constellation labels')
 
     chromo.reregisterKey('p',function(){
+	//toggle Planck labels
 	chromo.toggleAnnotationsByName('p');
 	chromo.checkTiles(true)
 	//console.log('toggled planck');
@@ -70,6 +92,17 @@ function setupPlanck(){
 	    $('#kiosk #options #option-labels #on-off').removeClass("on").addClass("off");};
     },'toggle planck labels')
 
+
+    chromo.reregisterKey('#',function(){
+	//toggle overlay and options (for Wii stuff)
+	if($('#kiosk .minmax').hasClass("max")){
+	    toggleOptions('min');
+	    toggleOverlay('off');
+	}else{
+	    toggleOptions('max');
+	    toggleOverlay('max');
+	};	    
+    });
 
     //turn off annotations (normal labels already turned off)
     for(var i=0 ; i < chromo.annotations.length ; i++){
@@ -99,7 +132,7 @@ function setupPlanck(){
 	var ovwid=Math.round(parseInt($(chromo.body+' #overlay').width()));
 	ovwid = ovwid + ncol*(colwid+20)
 	opwid = ncol*(colwid+20)
-	console.log('ovwid:',ovwid,'opwid',opwid);
+	if (logging) console.log('ovwid:',ovwid,'opwid',opwid);
 	$(chromo.body+' #overlay').css({
 	    width:ovwid+'px',
 	    left:-(ovwid+40)+'px',
@@ -180,6 +213,9 @@ function setupPlanck(){
 	    $(chromo.body+' #overlay #menu-title').css({bottom:titbot+"px"});
 	}
 
+	//********************************
+	//make options buttons in overlay
+	//********************************
 	//add opacity changer
 	opleft=260+colwid*(ncol-1)/2
 	$(chromo.body+' #overlay #options').append('<div id="opcol" class="column" style="top:'+(colheight-40)+';left:'+opleft+'"></div>');
@@ -188,15 +224,15 @@ function setupPlanck(){
 	$(chromo.body+' #overlay #options #opcol .option').append('<div class="op-pm"><div class="op-plus">+</div><div class="op-minus">-</div></div>')
 	$(chromo.body+' #overlay #options #opcol .option').append('<div class="label">Opacity: <span class="opval">40</span>%</div>');
 	$(chromo.body+' #overlay #options #opcol #opacity .label').click(function(){
-	    console.log('resetting');
+	    if (logging) console.log('opacity reset');
 	    resetOpacity();
 	});
 	$(chromo.body+' #overlay #options #opcol .option .op-minus').click(function(){
-	    console.log('minus');
+	    if (logging) console.log('opacity minus');
 	    changeOpacity(-10);
 	});
 	$(chromo.body+' #overlay #options #opcol .option .op-plus').click(function(){
-	    console.log('plus');
+	    if (logging) console.log('opacity plus');
 	    changeOpacity(+10);
 	});
 
@@ -205,12 +241,13 @@ function setupPlanck(){
 
     }
 
+    //toggleOverlay();
     chromo.defaultOpacity=60; //default opacity for overlays
     resetOpacity(); //reset opacities to default value
     
 
     //////////////////////////////////
-    // ADDITIONAL FUNCTIONS
+    // ADDITIONAL OVERLAY FUNCTIONS
     //////////////////////////////////
     
     function isOverlay(key){
@@ -236,7 +273,7 @@ function setupPlanck(){
 
 	opLabel=$(chromo.body+' .opval').text();
 	opVal=parseInt(opLabel)
-	console.log('label value: ',opVal);
+	if (logging) console.log('label value: ',opVal);
 	//calculate new opacity
 	newOp=Math.round(opVal+dOp);
 	//limit to range {0:1}
@@ -248,7 +285,7 @@ function setupPlanck(){
 		var currOp=Math.round(parseFloat(getOpacity($(chromo.body+" ."+chromo.annotations[i].name)))*100);
 		//get stored opacity of layer
 		annOp=Math.round(parseFloat(chromo.annotations[i].opacity)*100)
-		console.log('current: ',chromo.annotations[i].name, annOp, currOp);
+		if (logging) console.log('current: ',chromo.annotations[i].name, annOp, currOp);
 		//change opacity for all overlay layers
 		//chromo.annotations[i].opacity=newOp;
 		$(chromo.body+' .opval').text(newOp);
@@ -256,9 +293,9 @@ function setupPlanck(){
 		    //if overlay is shown, set opacity
 		    setOpacity($(chromo.body+' .'+chromo.annotations[i].name),newOp/100);
 		    chromo.annotations[i].opacity=newOp/100;
-		    console.log('changing: ',chromo.annotations[i].name,currOp,'->',newOp);
+		    if (logging) console.log('changing: ',chromo.annotations[i].name,currOp,'->',newOp);
 		}else{
-		    console.log('not shown')
+		    if (logging) console.log('not shown')
 		    //change anyway
 		    chromo.annotations[i].opacity=newOp/100;
 		};
@@ -278,7 +315,7 @@ function setupPlanck(){
 		var currOp=Math.round(parseFloat(getOpacity($(chromo.body+" ."+chromo.annotations[i].name)))*100);
 		//change text in label
 		$(chromo.body+' .opval').text(defOp);
-		console.log('reseting: ',chromo.annotations[i].name,currOp,'->',defOp);
+		if (logging) console.log('reseting: ',chromo.annotations[i].name,currOp,'->',defOp);
 		if(Math.abs(currOp-annOp)<1){
 		    //if overlay is shown, set opacity
 		    setOpacity($(chromo.body+' .'+chromo.annotations[i].name),defOp/100);
@@ -291,6 +328,10 @@ function setupPlanck(){
 	    }
 	}
     }
+
+    //////////////////////////////////
+    // ADDITIONAL TOGGLING FUNCTIONS
+    //////////////////////////////////
 
     $('#kiosk .minmax').click(function(){
 	toggleOptions();
@@ -317,7 +358,7 @@ function setupPlanck(){
                 left:'-190px',
 		opacity:0.6,
             });
-	    toggleOverlay('off');
+	    //toggleOverlay('off');
         }else if($('#kiosk .minmax').hasClass("min") || force=='max'){
 	    //maximize
 	    $('#kiosk .minmax').removeClass("min").addClass("max");
@@ -354,6 +395,7 @@ function setupPlanck(){
                 left:-(ovwid+40)+'px',
             });
 	};
+	if (logging) console.log('overlay',force);
     }
 
     //toggle constellation labels on click
