@@ -29,8 +29,10 @@
 
 function setupPlanck(){    
     $('#kiosk').disableTextSelect();
+    chromo.planckversion='0.1.1 (BETA)';
     logging=true;
     if (logging) console.log(chromo.compact);
+    $(chromo.body+' .planck_version').html(chromo.phrasebook.version+" "+chromo.planckversion);
     //chromo.buildHelp(true);
     //animate options panel
     //process overlays

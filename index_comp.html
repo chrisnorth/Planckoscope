@@ -27,7 +27,7 @@
 	  
 	  // Set up the Chromoscope
 	  $(document).ready(function(){
-	  chromo = $.chromoscope({showintro:false,showshare:false,showabout:false,showlangs:false,showcontext:false});
+	  chromo = $.chromoscope({showintro:false,showshare:false,showabout:false,showlangs:false,showcontext:false,showversion:false});
 	  // The spectral bands should be in order
 	  chromo.addWavelength({key:'d',useasdefault:false,name:'dust',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dust_gal/',tiles_eq:'Dustcol_12000_EQ-tiles/',ext:'jpg',title:'Dust',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'o',useasdefault:false,name:'co',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/co_gal/',tiles_eq:'COcol_12000_EQ-tiles/',ext:'jpg',title:'Carbon Monoxide',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
@@ -70,6 +70,7 @@
     <div class="chromo_title">
       
       <a href="http://www.esa.int/planck"><img id="titimg" src="planck_logo.gif"></a>
+      <h2 class="planck_version"></h2>
       <h1 class="subt"><a href="http://www.chromoscope.net">Chromoscope</a></h1>
       <!--<h1 class="subt">Component View</h1>-->
       <h2 class="chromo_version"></h2>
