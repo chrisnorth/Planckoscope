@@ -143,9 +143,8 @@ function setupPlanck(){
     chromo.ksklmx=-1;
 
     if (logging) console.log('ksklmn,ksklmx:',chromo.ksklmn,chromo.ksklmx);
-
-    $('.switch-comp').attr("href","index_comp.html?compact="+chromo.compact);
-    $('.switch-freq').attr("href","index_freq.html?compact="+chromo.compact)
+    lnk=$('.switch-link').attr("href");
+    $('.switch-link').attr("href",lnk+"?compact="+chromo.compact);
 
     //********************************
     //make options buttons in overlay
