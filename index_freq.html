@@ -2,7 +2,7 @@
   <head>
     <title>Chromoscope - View the Universe in different wavelengths</title>
     <link rel="icon" type="image/vnd.microsoft.icon" href="http://www.chromoscope.net/favicon.ico" />
-    <link rel="stylesheet" href="planck-0.1.0/planck.css" type="text/css" />
+    <link rel="stylesheet" href="planck-0.1.1/planck.css" type="text/css" />
     <!--[if IE 6]><link rel="stylesheet" href="1.4.3/style-ie.css" type="text/css" /><![endif]-->
     <script src="1.4.3/jquery-1.7.1.min.js"></script>
     <script src="1.4.3/jquery.mousewheel.min.js"></script>
@@ -12,7 +12,7 @@
     <script src="1.4.3/chromoscope-contextmenu.js"></script>
     <!--<script src="1.4.3/chromoscope-coordswitcher.js"></script>-->
     <!--<script type="text/javascript" src="planck-0.1.0/chromoscope-addoverlay.js"></script>-->
-    <script type="text/javascript" src="planck-0.1.0/chromoscope-reregisterkey.js"></script>
+    <script type="text/javascript" src="planck-0.1.1/chromoscope-reregisterkey.js"></script>
     <script type="text/javascript" src="1.4.3/ui/jquery.ui.core.min.js"></script>
     <script type="text/javascript" src="1.4.3/ui/jquery.ui.widget.min.js"></script>
     <script type="text/javascript" src="1.4.3/ui/jquery.ui.mouse.min.js"></script>
@@ -20,7 +20,7 @@
     <script type="text/javascript" src="fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
     <script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
     <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" media="screen" />
-    <script type="text/javascript" src="planck-0.1.0/planck.js"></script>
+    <script type="text/javascript" src="planck-0.1.1/planck.js"></script>
     <script type="text/javascript">
       <!--
   	  var kmlUrl = 'kml_files/results.kml';
@@ -82,14 +82,14 @@
       <!--<h2>Kiosk Mode</h2>-->
     </div>
 	
-    <div id="kiosk" style="height:160px">
+    <div id="kiosk">
       <div id="menu-title">Options</div>
       <div class="minmax min"></div>
       <div id="options">
 	<div class="column left">
 	  <div class="option option-switch">
 	    <!--<div id="on-off" class="null"></div>-->
-	    <a href="index_comp.html" title="Switch to view of components of the sky">
+	    <a class="switch-comp" href="index_comp.html" title="Switch to view of components of the sky">
 	      <div class="label-sm">Show Components</div>
 	    </a>
 	  </div>
