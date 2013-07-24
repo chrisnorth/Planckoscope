@@ -1,13 +1,13 @@
 /*
  * 
- * Planckoscope v0.1.0
+ * Planckoscope v0.1.1
  * 
  * Written by Chris North for the Planck Royal Society Summer Science Exhibition 2013 as an educational resource.
  * 
  * This application requires Chromoscope v1.4.3. It will run locally or on a web server. To run locally you will need to download the appropriate tile sets and code.
  * 
  * Functions in v0.1.1
- *   - Behaves sensible when in compact mode
+ *   - Behaves sensibly when in compact mode
  *   - Sizes of options boxes now in em units, not px
  *
  *
