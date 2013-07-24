@@ -10,6 +10,10 @@ It will run locally or on a web server. To run locally you will need to download
 
 For more information on Chromoscope, see www.chromoscope.net and github.com/slowe/chromoscope
 
+Functions in v0.1.1
+ * Behaves more sensibly in "compact mode" (useful for embedding)
+ * Version number displayed
+
 Functions in v0.1.0 (beyond Chromoscope):
  * Adds a second label layer for 'Planck labels'
  * Allow the overlay of more than one layer
