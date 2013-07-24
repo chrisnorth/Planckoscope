@@ -1,4 +1,4 @@
-Planckoscope v0.1.0
+Planckoscope v0.1.1
 
 currently available at http://chromoscope.net/planck/
 
