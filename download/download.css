@@ -44,6 +44,7 @@ body{
     float:left;
     height:auto;
     padding:10px;
+    z-index:50;
 }
 .tilebox{
     width:280px;
@@ -52,6 +53,7 @@ body{
     position:relative;
     display:block;
     overflow:hidden;
+    opacity:1.0;
 }
 
 .tilebox img{
@@ -68,7 +70,7 @@ body{
     font-weight:bold;
     position:absolute;
     display:block;
-    z-index:100;
+    z-index:90;
     margin: 0px auto;
     text-align:center;
     width:110%;
@@ -77,6 +79,33 @@ body{
     left:-5%;
     background-color:black;
     opacity:0.5;
+    transition:all 0.2s linear;
+    -webkit-transition:all 0.2s linear;
+    -moz-transition:all 0.2s linear;
+    -o-transition:all 0.2s linear;
+}
+
+.tilebox h3.box-on{
+    opacity:0.8;
+}
+
+.tilebox .link-bg{
+    position:absolute;
+    display:block;
+    bottom:0px;
+    width:100%;
+    height:1.5em;
+    background-color:black;
+    z-index:70;
+    opacity:0.5;
+    transition:all 0.2s linear;
+    -webkit-transition:all 0.2s linear;
+    -moz-transition:all 0.2s linear;
+    -o-transition:all 0.2s linear;
+}
+
+.tilebox .link-bg.box-on{
+    opacity:0.8;
 }
 
 .tilebox span.link{
@@ -84,9 +113,17 @@ body{
     display:block;
     bottom:0px;
     width:55%;
-    background-color:black;
-    opacity:0.5;
-    height:1.5em;
+    opacity:1.0;
+    line-height:1.5em;
+    z-index:80;
+}
+
+.tilebox span a{
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:bold;
+    opacity:1.0;
+    z-index:90;
 }
 
 .tilebox span.size{
@@ -94,16 +131,12 @@ body{
     display:block;
     bottom:0px;
     width:100%;
-    opacity:0.5;
+    opacity:1.0;
     height:1.5em;
+    line-height:1.5em;
     text-align:center;
     font-weight:bold;
-}
-
-.tilebox span a{
-    color:#ffffff;
-    text-decoration:none;
-    font-weight:bold;
+    z-index:70;
 }
 
 .zip{
@@ -120,8 +153,18 @@ body{
     display:block;
     width:100%;
     left:0px;
-    bottom:1.5em;
-    background-color:#555555;
-    opacity:0.5;
+    bottom:-1.5em;
+    background-color:black;
+    opacity:0.8;
     margin:0px;
+    z-index:60;
+    transition:all 0.2s linear;
+    -webkit-transition:all 0.2s linear;
+    -moz-transition:all 0.2s linear;
+    -o-transition:all 0.2s linear;
 }
+
+.tilebox .desc.box-on{
+    bottom:1.5em;
+}
+

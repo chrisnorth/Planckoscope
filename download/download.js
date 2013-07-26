@@ -1,0 +1,13 @@
+$(document).ready(function(){
+    $(".tilebox").each(function(e){
+	$(this).on("mouseover",function(e){
+	    $(this).find(".desc").addClass("box-on");
+	    $(this).find(".link-bg").addClass("box-on");
+	    $(this).find("h3").addClass("box-on");
+	}).on("mouseout",function(e){
+	    $(this).find(".desc").removeClass("box-on");
+	    $(this).find(".link-bg").removeClass("box-on");
+	    $(this).find("h3").removeClass("box-on");
+	});
+    });
+});
