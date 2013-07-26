@@ -79,7 +79,7 @@ body{
     opacity:0.5;
 }
 
-.tilebox span{
+.tilebox span.link{
     position:absolute;
     display:block;
     bottom:0px;
@@ -87,6 +87,17 @@ body{
     background-color:black;
     opacity:0.5;
     height:1.5em;
+}
+
+.tilebox span.size{
+    position:absolute;
+    display:block;
+    bottom:0px;
+    width:100%;
+    opacity:0.5;
+    height:1.5em;
+    text-align:center;
+    font-weight:bold;
 }
 
 .tilebox span a{
