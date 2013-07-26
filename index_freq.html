@@ -42,7 +42,7 @@
 	  chromo.addWavelength({key:'v',useasdefault:false,name:'visible',tiles:{z:'http://s3.amazonaws.com/chromoscope-DSS2-tiles/',z3:'http://s3.amazonaws.com/chromoscope-photopic/',z4:'http://s3.amazonaws.com/chromoscope-photopic/'},ext:'jpg',title:'Visible',attribution:{z:'<a href="http://stdatu.stsci.edu/dss/">DSS2</a>/<a href="http://www.wikisky.org/">Wikisky</a>',z3:'Nick Risinger, <a href="http://skysurvey.org/">skysurvey.org</a>',z4:'Nick Risinger, <a href="http://skysurvey.org/">skysurvey.org</a>'}});
 	  // Annotation layers will be shown at all wavelengths ('c' and 'p' are reserved for these)
 	  chromo.addAnnotationLayer({opacity:0.4,key:'c',name:'labels_const',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/labels_const2_gal/',tiles_eq:'labels_const_EQ/',ext:'jpg',title:'Constellations',attribution:'Constellation labels'});
-	  chromo.addAnnotationLayer({opacity:0.4,key:'p',name:'labels_planck',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/labels_planck_gal/',ext:'png',title:'Labels',attribution:'Planck Labels'});
+	  chromo.addAnnotationLayer({opacity:0.4,key:'p',name:'labels_planck',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/labels_planck_gal_new/',ext:'png',title:'Labels',attribution:'Planck Labels'});
 
 	  //add overlay labels (don't use 'c' or 'p')
 	  chromo.addAnnotationLayer({opacity:0.6,key:'u',name:'dust_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dust-overlay_gal/',ext:'jpg',title:'Dust overlay',attribution:'Dust'});
