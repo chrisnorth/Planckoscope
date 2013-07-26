@@ -6,7 +6,7 @@ Written by Chris North for the Planck Royal Society Summer Science Exhibition 20
 
 This application requires Chromoscope v1.4.3.
 The relevant parts of the Chromoscope source code (1.4.3 subdirectory) are included here for convenience, but have not been altered.
-It will run locally or on a web server. To run locally you will need to download the appropriate tile sets and code.
+It will run locally or on a web server. To run locally you will need to download this code, and either link to the online tilesets or download them from www.chromoscope.net/planck/download.
 
 For more information on Chromoscope, see www.chromoscope.net and github.com/slowe/chromoscope
 
