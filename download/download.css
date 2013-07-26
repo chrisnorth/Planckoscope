@@ -168,6 +168,7 @@ a:hover{
     background-color:black;
     opacity:0.8;
     margin:0px;
+    padding-bottom:3px;
     z-index:60;
     transition:all 0.2s linear;
     -webkit-transition:all 0.2s linear;
