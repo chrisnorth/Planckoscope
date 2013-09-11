@@ -10,6 +10,9 @@ It will run locally or on a web server. To run locally you will need to download
 
 For more information on Chromoscope, see www.chromoscope.net and github.com/slowe/chromoscope
 
+The IDL code used to plot the images is in IDL_code directory.
+See the contents of plot_maps.pro for details.
+
 Functions in v0.1.1
  * Behaves more sensibly in "compact mode" (useful for embedding)
  * Version number displayed
