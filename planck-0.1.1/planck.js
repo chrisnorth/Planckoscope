@@ -165,6 +165,7 @@ function setupPlanck(){
 	var colmax=3;
 	var ovwid=Math.round(parseInt($(chromo.body+' #overlay').width()));
 	if (chromo.nov > colmax) ncol=2;
+	if (chromo.nov > 2*colmax) ncol=3;
 	//console.log(chromo.nov/colmax,Math.ceil(chromo.nov/colmax));
 	var ncol=Math.ceil(chromo.nov/colmax);
 
@@ -189,7 +190,7 @@ function setupPlanck(){
 	
 	chromo.ovloff=-ovw-2;
 	chromo.ovlmx=-1;
-	chromo.ovlmn=-22.5;
+	chromo.ovlmn=-31.5;
 	$(chromo.body+' #overlay').css({left:chromo.ovloff+'em'});
 	
 	//add overlay buttons
