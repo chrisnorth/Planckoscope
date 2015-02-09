@@ -55,6 +55,7 @@
 	  chromo.addAnnotationLayer({opacity:0.4,key:'p',name:'labels_planck',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/labels_planck_gal/',ext:'jpg',title:'Labels',attribution:'Planck Labels'});
 
 	  //add overlay labels (don't use 'c' or 'p')
+	  chromo.addAnnotationLayer({opacity:0.6,key:'f',name:'dustpol_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dustpol-overlay_gal/',ext:'jpg',title:'Dust Pol overlay',attribution:'Dust Polarisation'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'u',name:'dust_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dust-overlay_gal/',ext:'jpg',title:'Dust overlay',attribution:'Dust'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'w',name:'low_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/low-overlay_gal/',ext:'jpg',title:'Low frequency overlay',attribution:'Low'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'r',name:'co_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/co_gal/',ext:'jpg',title:'CO overlay',attribution:'CO'});
@@ -149,6 +150,16 @@
 	great interested to astronomers studying star formation in our
 	own Milky Way.</p>
     </div>
+    <div class="chromo_popup overlay_info" id="moreinfo-dustpol_overlay">
+      <h4 class="info">Dust Polarisation</h4>
+      <img  src="Dustpol_cut_small.jpg">
+      <p>The cold dust grains in our galaxy are aligned to the
+	magnetic field, and this causes the light it emits to be
+        slightly polarised. The direction of this polarisation tells us
+        the orientation of the Galaxy's magnetic field.</p>
+        <p>The texture used to display the polarisation direction was originally produced by Marc-Antoine Meville-Deschenes, at IAS (Paris).</p>
+    </div>
+
     <div class="chromo_popup overlay_info" style="display:none" id="moreinfo-low_overlay">
       <h4 class="info">Low frequency foregrounds</h4>
       <img  src="Low_cut_small.jpg">
