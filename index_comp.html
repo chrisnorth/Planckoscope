@@ -59,7 +59,7 @@
 	  chromo.addAnnotationLayer({opacity:0.6,key:'w',name:'low_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/low-overlay_gal/',ext:'jpg',title:'Low frequency overlay',attribution:'Low'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'n',name:'syncpol_overlay',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/syncpol-overlay_gal/',ext:'jpg',title:'Synchrotron Pol',attribution:'syncpol'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'r',name:'co_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/co_gal/',ext:'jpg',title:'CO overlay',attribution:'CO'});
-	  chromo.addAnnotationLayer({opacity:0.6,key:'m',name:'mask_cosm',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/mask_cosm_gal/',ext:'jpg',title:'Mask (cosm.)',attribution:'Mask'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'m',name:'mask_cosm',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/maskpol_gal/',ext:'jpg',title:'Mask',attribution:'Mask'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'o',name:'ptsrc',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/ptsrc_gal/',ext:'jpg',title:'Point Sources',attribution:'Point Sources'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'e',name:'lens',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/lens_gal/',ext:'jpg',title:'Lensing',attribution:'Lens'});
 	  // Load the map
@@ -229,7 +229,7 @@
 
     <div class="chromo_popup overlay_info" style="display:none" id="moreinfo-mask_cosm">
       <h4 class="info">Sky Mask</h4>
-      <img  src="Mask_cosm_cut_small.jpg">
+      <img  src="Maskpol_cut_small.jpg">
       <p>To do the cosmological analysis, any "contamination" from
 	sources of light other than the CMB (primarily our Galaxy and
 	others) must be removed. Although the Planck data can be used
@@ -237,8 +237,9 @@
 	for it, this is much more difficult to do in the centre of our
 	Galaxy, and near the brightest sources of light around the
 	rest of the sky. The "sky mask" shows the areas of sky that
-	are not considered when doing the cosmological analysis, which
-	accounts for just over half the sky.</p>
+	are not considered when doing the cosmological analysis, with
+	those excluded only from polarisation analysis shown in
+	grey.</p>
     </div>
 
     <div class="chromo_popup overlay_info" style="display:none" id="moreinfo-ptsrc">
