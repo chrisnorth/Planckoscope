@@ -37,16 +37,16 @@
 	  
 	  // Set up the Chromoscope
 	  $(document).ready(function(){
-	  chromo = $.chromoscope({showintro:false,showshare:false,showabout:false,showlangs:false,showcontext:false,showversion:false});
+	  chromo = $.chromoscope({showintro:true,showshare:true,showabout:false,showlangs:false,showcontext:false,showversion:false});
 	  // The spectral bands should be in order
-	  chromo.addWavelength({key:'1',useasdefault:false,name:'dustpol',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/dustpol_gal/',tiles_eq:'Dustcol_12000_EQ-tiles/',ext:'jpg',title:'Dust Polarisation',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
+	  chromo.addWavelength({key:'1',useasdefault:false,name:'dustpol',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dustpol_gal/',tiles_eq:'Dustcol_12000_EQ-tiles/',ext:'jpg',title:'Dust Polarisation',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'2',useasdefault:false,name:'dust',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dust_gal/',tiles_eq:'Dustcol_12000_EQ-tiles/',ext:'jpg',title:'Dust',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'3',useasdefault:false,name:'co',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/co_gal/',tiles_eq:'COcol_12000_EQ-tiles/',ext:'jpg',title:'Carbon Monoxide',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'4',useasdefault:true,name:'cmb',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/cmb_gal/',tiles_eq:'CMBcol_12000_EQ-tiles/',ext:'jpg',title:'CMB',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'5',useasdefault:false,name:'ame',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/ame_gal/',tiles_eq:'Lowcol_12000_EQ-tiles/',ext:'jpg',title:'Spinning Dust ',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'6',useasdefault:false,name:'free',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/freefree_gal/',tiles_eq:'Lowcol_12000_EQ-tiles/',ext:'jpg',title:'Hot gas',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'7',useasdefault:false,name:'sync',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/sync_gal/',tiles_eq:'Lowcol_12000_EQ-tiles/',ext:'jpg',title:'Synchrotron',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
-	  chromo.addWavelength({key:'8',useasdefault:false,name:'syncpol',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/syncpol_gal/',ext:'jpg',title:'Synchrotron Polarisation',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
+	  chromo.addWavelength({key:'8',useasdefault:false,name:'syncpol',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/syncpol_gal/',ext:'jpg',title:'Synchrotron Polarisation',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'a',useasdefault:false,name:'composite',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/Planck-rgb-hires/',tiles_eq:'Planck_EQ-tiles/',ext:'jpg',title:'Composite',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 
 	  // Annotation layers will be shown at all wavelengths ('c' and 'p' are reserved for these)
@@ -57,10 +57,10 @@
 	  chromo.addAnnotationLayer({opacity:0.6,key:'u',name:'dustpol_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dustpol-overlay_gal/',ext:'jpg',title:'Dust Pol overlay',attribution:'Dust Polarisation'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'d',name:'dust_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dust-overlay_gal/',ext:'jpg',title:'Dust overlay',attribution:'Dust'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'w',name:'low_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/low-overlay_gal/',ext:'jpg',title:'Low frequency overlay',attribution:'Low'});
-	  chromo.addAnnotationLayer({opacity:0.6,key:'n',name:'syncpol_overlay',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/syncpol-overlay_gal/',ext:'jpg',title:'Synchrotron Pol',attribution:'syncpol'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'n',name:'syncpol_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/syncpol-overlay_gal/',ext:'jpg',title:'Synchrotron Pol',attribution:'syncpol'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'r',name:'co_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/co_gal/',ext:'jpg',title:'CO overlay',attribution:'CO'});
-	  chromo.addAnnotationLayer({opacity:0.6,key:'m',name:'mask_cosm',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/maskpol_gal/',ext:'jpg',title:'Mask',attribution:'Mask'});
-	  chromo.addAnnotationLayer({opacity:0.6,key:'o',name:'ptsrc',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/ptsrc_gal/',ext:'jpg',title:'Point Sources',attribution:'Point Sources'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'m',name:'mask_pol',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/maskpol_gal/',ext:'jpg',title:'Mask',attribution:'Mask'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'o',name:'ptsrc',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/ptsrc_gal/',ext:'jpg',title:'Point Sources',attribution:'Point Sources'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'e',name:'lens',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/lens_gal/',ext:'jpg',title:'Lensing',attribution:'Lens'});
 	  // Load the map
 	  chromo.load(setupPlanck);
@@ -130,7 +130,7 @@
       <div id="options">
       </div>
     </div>
-
+    
     <div class="chromo_popup overlay_info" id="moreinfo-dust_overlay">
       <h4 class="info">Dust</h4>
       <img  src="Dust_cut_small.jpg">

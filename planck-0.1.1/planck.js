@@ -33,6 +33,7 @@ function setupPlanck(){
     logging=true;
     if (logging) console.log(chromo.compact);
     $(chromo.body+' .planck_version').html(chromo.phrasebook.version+" "+chromo.planckversion);
+    $(chromo.body+" .chromo_message").delay(5000).fadeOut(700)
     //chromo.buildHelp(true);
     //animate options panel
     //process overlays
@@ -55,6 +56,7 @@ function setupPlanck(){
 	$(this.body+" .chromo_title").toggle();
 	$(this.body+" #kiosk").toggle();
 	$(this.body+" #overlay").toggle();
+	$(this.body+" #coord_form").toggle();
     });
 
     chromo.registerKey(38,function(){ // user presses the down arrow key  (37 was left)
@@ -146,7 +148,7 @@ function setupPlanck(){
 
     if (logging) console.log('ksklmn,ksklmx:',chromo.ksklmn,chromo.ksklmx);
     lnk=$('.switch-link').attr("href");
-    $('.switch-link').attr("href",lnk+"?compact="+chromo.compact);
+    $('.switch-link').attr("href",lnk+"?showintro=false&compact="+chromo.compact);
 
     //********************************
     //make options buttons in overlay
@@ -530,7 +532,7 @@ function setupPlanck(){
     });
 
     //Set up fancybox stuff
-
+    $(chromo.body+" .chromo_helplink").append(' | <span id="coord_form"><button onclick="chromo.moveMap(parseInt(glong.value), parseInt(glat.value));">Center Map:</button><span>lon:</span><input type="text" name="glong" id="glong" value="0"><span>lat:</span><input type="text" name="glat" id="glat" value="0"> | <button onclick="chromo.reset();glat.value=0;glong.value=0">Reset</button></span>');
 
 //});
 }

@@ -37,17 +37,17 @@
 	  
 	  // Set up the Chromoscope
 	  $(document).ready(function(){
-	  chromo = $.chromoscope({showintro:false,showshare:false,showabout:false,showlangs:false,showcontext:false,showversion:false});
+	  chromo = $.chromoscope({showintro:true,showshare:true,showabout:false,showlangs:false,showcontext:false,showversion:false});
 	  // The spectral bands should be in order
-	  chromo.addWavelength({key:'9',useasdefault:false,name:'857',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/857_gal/',tiles_eq:'857col_12000_EQ-tiles/',ext:'jpg',title:'857 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
-	  chromo.addWavelength({key:'8',useasdefault:false,name:'545',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/545_gal/',tiles_eq:'545col_12000_EQ-tiles/',ext:'jpg',title:'545 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
-	  chromo.addWavelength({key:'7',useasdefault:false,name:'353',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/353_gal/',tiles_eq:'353col_12000_EQ-tiles/',ext:'jpg',title:'353 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
-	  chromo.addWavelength({key:'6',useasdefault:false,name:'217',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/217_gal/',tiles_eq:'217col_12000_EQ-tiles/',ext:'jpg',title:'217 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
-	  chromo.addWavelength({key:'5',useasdefault:true,name:'143',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/143_gal/',tiles_eq:'143col_12000_EQ-tiles/',ext:'jpg',title:'143 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
-	  chromo.addWavelength({key:'4',useasdefault:false,name:'100',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/100_gal/',tiles_eq:'100col_12000_EQ-tiles/',ext:'jpg',title:'100 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
-	  chromo.addWavelength({key:'3',useasdefault:false,name:'70',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/70_gal/',tiles_eq:'70col_12000_EQ-tiles/',ext:'jpg',title:'70 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/LFI'});
-	  chromo.addWavelength({key:'2',useasdefault:false,name:'44',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/44_gal/',tiles_eq:'44col_12000_EQ-tiles/',ext:'jpg',title:'44 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/LFI'});
-	  chromo.addWavelength({key:'1',useasdefault:false,name:'30',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/30_gal/',tiles_eq:'30col_12000_EQ-tiles/',ext:'jpg',title:'30 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/LFI'});
+	  chromo.addWavelength({key:'9',useasdefault:false,name:'857',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/857_gal/',tiles_eq:'857col_12000_EQ-tiles/',ext:'jpg',title:'857 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
+	  chromo.addWavelength({key:'8',useasdefault:false,name:'545',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/545_gal/',tiles_eq:'545col_12000_EQ-tiles/',ext:'jpg',title:'545 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
+	  chromo.addWavelength({key:'7',useasdefault:false,name:'353',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/353_gal/',tiles_eq:'353col_12000_EQ-tiles/',ext:'jpg',title:'353 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
+	  chromo.addWavelength({key:'6',useasdefault:false,name:'217',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/217_gal/',tiles_eq:'217col_12000_EQ-tiles/',ext:'jpg',title:'217 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
+	  chromo.addWavelength({key:'5',useasdefault:true,name:'143',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/143_gal/',tiles_eq:'143col_12000_EQ-tiles/',ext:'jpg',title:'143 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
+	  chromo.addWavelength({key:'4',useasdefault:false,name:'100',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/100_gal/',tiles_eq:'100col_12000_EQ-tiles/',ext:'jpg',title:'100 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
+	  chromo.addWavelength({key:'3',useasdefault:false,name:'70',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/70_gal/',tiles_eq:'70col_12000_EQ-tiles/',ext:'jpg',title:'70 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/LFI'});
+	  chromo.addWavelength({key:'2',useasdefault:false,name:'44',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/44_gal/',tiles_eq:'44col_12000_EQ-tiles/',ext:'jpg',title:'44 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/LFI'});
+	  chromo.addWavelength({key:'1',useasdefault:false,name:'30',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/30_gal/',tiles_eq:'30col_12000_EQ-tiles/',ext:'jpg',title:'30 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/LFI'});
 	  chromo.addWavelength({key:'a',useasdefault:false,name:'composite',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/Planck-rgb-hires/',tiles_eq:'Planck_EQ-tiles/',ext:'jpg',title:'Composite',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'v',useasdefault:false,name:'visible',tiles:{z:'http://s3.amazonaws.com/chromoscope-DSS2-tiles/',z3:'http://s3.amazonaws.com/chromoscope-photopic/',z4:'http://s3.amazonaws.com/chromoscope-photopic/'},ext:'jpg',title:'Visible',attribution:{z:'<a href="http://stdatu.stsci.edu/dss/">DSS2</a>/<a href="http://www.wikisky.org/">Wikisky</a>',z3:'Nick Risinger, <a href="http://skysurvey.org/">skysurvey.org</a>',z4:'Nick Risinger, <a href="http://skysurvey.org/">skysurvey.org</a>'}});
 	  // Annotation layers will be shown at all wavelengths ('c' and 'p' are reserved for these)
@@ -58,10 +58,10 @@
 	  chromo.addAnnotationLayer({opacity:0.6,key:'u',name:'dustpol_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dustpol-overlay_gal/',ext:'jpg',title:'Dust Pol overlay',attribution:'Dust Polarisation'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'d',name:'dust_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dust-overlay_gal/',ext:'jpg',title:'Dust overlay',attribution:'Dust'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'w',name:'low_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/low-overlay_gal/',ext:'jpg',title:'Low frequency overlay',attribution:'Low'});
-	  chromo.addAnnotationLayer({opacity:0.6,key:'n',name:'syncpol_overlay',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/syncpol-overlay_gal/',ext:'jpg',title:'Synchrotron Pol',attribution:'syncpol'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'n',name:'syncpol_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/syncpol-overlay_gal/',ext:'jpg',title:'Synchrotron Pol',attribution:'syncpol'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'r',name:'co_overlay',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/co_gal/',ext:'jpg',title:'CO overlay',attribution:'CO'});
-	  chromo.addAnnotationLayer({opacity:0.6,key:'m',name:'mask_cosm',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/maskpol_gal/',ext:'jpg',title:'Mask (cosm.)',attribution:'Mask'});
-	  chromo.addAnnotationLayer({opacity:0.6,key:'o',name:'ptsrc',tiles:'http://astrog80.astro.cf.ac.uk/Planck/Planckoscope/ptsrc_gal/',ext:'jpg',title:'Point Sources',attribution:'Point Sources'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'m',name:'mask_pol',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/maskpol_gal/',ext:'jpg',title:'Mask (cosm.)',attribution:'Mask'});
+	  chromo.addAnnotationLayer({opacity:0.6,key:'o',name:'ptsrc',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/ptsrc_gal/',ext:'jpg',title:'Point Sources',attribution:'Point Sources'});
 	  chromo.addAnnotationLayer({opacity:0.6,key:'e',name:'lens',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/lens_gal/',ext:'jpg',title:'Lensing',attribution:'Lens'});
 
 	  // Load the map

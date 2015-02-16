@@ -676,3 +676,45 @@ img#titimg{
     width:6em;
     left:0px;
 }
+
+/*Edits from George Williams*/
+#coord_form {
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        /*position: absolute;*/
+        width:100%;
+        bottom:0em;
+        z-index: 99;
+        padding:0;
+        color: white;
+        opacity: 1.0;
+        text-align:center;
+}
+#coord_form button {
+        /*border-radius:8px;*/
+	border:0;
+        font-weight: bold;
+	font-size:1em;
+        color: #ddf;
+        background: #777;
+	padding: 0;
+	cursor:pointer;
+}
+#coord_form input {
+        width:3em;
+        text-align:center;
+        /*border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;*/
+        border-style: none;
+	font-size:0.8em;
+	background-color:ddd;
+}
+#coord_form span{
+        width:3em;
+        background: #777;
+        font-weight: bold;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        /*font-style: italic;*/
+	padding-left:0.5em;
+}
