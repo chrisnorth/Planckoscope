@@ -29,10 +29,15 @@
 
 function setupPlanck(){    
     $('#kiosk').disableTextSelect();
-    chromo.planckversion='0.1.1 (BETA)';
-    logging=true;
+    chromo.planckversion='0.1.2 (BETA)';
+    logging=false;
     if (logging) console.log(chromo.compact);
     $(chromo.body+' .planck_version').html(chromo.phrasebook.version+" "+chromo.planckversion);
+
+    //add coordinates form
+    if (!(chromo.compact)){
+	$(chromo.body+" .chromo_helplink").append(' | <span id="coord_form"><button onclick="chromo.moveMap(parseInt(glong.value), parseInt(glat.value));">Center Map:</button><span>lon:</span><input type="text" name="glong" id="glong" value="0"><span>lat:</span><input type="text" name="glat" id="glat" value="0"> | <button onclick="chromo.reset();glat.value=0;glong.value=0">Reset</button></span>');
+    };
     $(chromo.body+" .chromo_message").delay(5000).fadeOut(700)
     //chromo.buildHelp(true);
     //animate options panel
@@ -532,7 +537,6 @@ function setupPlanck(){
     });
 
     //Set up fancybox stuff
-    $(chromo.body+" .chromo_helplink").append(' | <span id="coord_form"><button onclick="chromo.moveMap(parseInt(glong.value), parseInt(glat.value));">Center Map:</button><span>lon:</span><input type="text" name="glong" id="glong" value="0"><span>lat:</span><input type="text" name="glat" id="glat" value="0"> | <button onclick="chromo.reset();glat.value=0;glong.value=0">Reset</button></span>');
 
 //});
 }
