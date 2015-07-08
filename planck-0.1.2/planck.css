@@ -317,7 +317,7 @@ p.social img {
 }
 
 #kiosk{
-    height: 10em;
+    height: 12em;
     width:13em;
     position: absolute;
     bottom: 4em;
@@ -336,7 +336,6 @@ p.social img {
     -webkit-box-shadow:0.2em 0.2em 1em #000;
     overflow:hidden;
     opacity: 0.6;
-    height:10em
 }
 
 /*#kiosk-overlay{
@@ -429,6 +428,7 @@ p.social img {
     font-size:1em;
 }
 
+
 #kiosk #options #on-off{
     width:0.5em;
     height:1.8em;
@@ -495,7 +495,7 @@ h4{
 }
 
 #overlay{
-    height: 10em;
+    height: 12em;
     width:40em;
     position: absolute;
     bottom:4em;
@@ -553,7 +553,7 @@ h4{
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     right:-0.7em;
     font-size: 1.3em;
-    bottom:2em;
+    bottom:4em;
     cursor: pointer;
 }
 
