@@ -28,7 +28,13 @@
     <h1>Planckoscope tilesets</h1>
     <p>Below are the various tile-sets used in <a href="http://www.chromoscope.net/planck">Planckoscope</a>. If you would like to run a local version, without requiring access to the internet, then you will need to download these. The source code can be downloaded from the <a href="http://github.com/chrisnorth/Planckoscope">Github respoitory</a>.</p>
     <p>Each tile-set contains over 5000 images, archived and compressed into both tarballs (.tar.gz) and zip files. While the compressed archives are not too large (typically 10-50 MB), the uncompressed files can take up rather a large amount of space and take considerable time to extract.</p>
-    <p>Images should be credited ESA/Planck/C. North with a link to <a href="http://www.chromoscope.net/planck">www.chromoscope.net/planck</a>.</p>
+    <p>Most images should be credited ESA/Planck/C. North with a link to <a href="http://www.chromoscope.net/planck">www.chromoscope.net/planck</a>, with the following exceptions:
+      <ul>
+	<li>The dust polarisation "texture" image should be credited to ESA/Planck/C. North/M-A. Meville-Deschenes.</li>
+	<li>The synchtrotron polarisation "texture" image should be credited to ESA/Planck/C. North/M-A. Meville-Deschenes.</li>
+	<li>The synchrotron colourised polarisation image should be credited to ESA/Planck/C. North/P. Leahy.</li>
+      </ul>
+    </p>
   </div>
   <div style="clear:both"></div>
 
@@ -244,6 +250,18 @@
       </div>
 
     <div class="tilebox-outer">
+      <div class="tilebox" id="syncpol-overlay">
+	<h3>Synchrotron Polarisation (colourised)</h3>
+	<img src="../sync-colour-pol_cut_small.jpg">
+	<div class="link-bg"></div><span class="link zip"><a href="../../Planckoscope-tiles/syncpol-overlay_gal.zip">Zip</a></span>
+	<span class="link tar"><a href="../../Planckoscope-tiles/syncpol-overlay_gal.tar.gz">Tarball</a></span>
+	<span class="size">(15MB)</span>
+	<p class="desc">Overlay image for dust</p>
+	<span class="img-link"><a href="../../Planckoscope-tiles/fullsky/Sync-colour-pol_12000px.png">Fullsky image</a></span>
+      </div>
+    </div>
+
+    <div class="tilebox-outer">
       <div class="tilebox" id="planck">
 	<h3>Planck composite</h3>
 	<img src="../planck_cut_small.jpg">
@@ -357,6 +375,12 @@
 	<span class="img-link"><a href="../../Planckoscope-tiles/fullsky/Dust-pol_overlay_12000px.png">Fullsky image</a></span>
       </div>
     </div>
+
+    <div style="clear:both"></div>
+  </div>
+
+  <div class="boxes" id="overlay"> 
+    <h2>Label layers</h2>
 
     <div class="tilebox-outer">
       <div class="tilebox" id="const">

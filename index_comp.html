@@ -39,14 +39,15 @@
 	  $(document).ready(function(){
 	  chromo = $.chromoscope({showintro:true,showshare:true,showabout:false,showlangs:false,showcontext:false,showversion:false});
 	  // The spectral bands should be in order
-	  chromo.addWavelength({key:'1',useasdefault:false,name:'dustpol',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dustpol_gal/',tiles_eq:'Dustcol_12000_EQ-tiles/',ext:'jpg',title:'Dust Polarisation',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
+	  chromo.addWavelength({key:'1',useasdefault:false,name:'dustpol',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dustpol_gal/',tiles_eq:'Dustcol_12000_EQ-tiles/',ext:'jpg',title:'Dust Polarisation',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/M-A. Meville-Deschenes'});
 	  chromo.addWavelength({key:'2',useasdefault:false,name:'dust',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dust_gal/',tiles_eq:'Dustcol_12000_EQ-tiles/',ext:'jpg',title:'Dust',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'3',useasdefault:false,name:'co',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/co_gal/',tiles_eq:'COcol_12000_EQ-tiles/',ext:'jpg',title:'Carbon Monoxide',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'4',useasdefault:true,name:'cmb',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/cmb_gal/',tiles_eq:'CMBcol_12000_EQ-tiles/',ext:'jpg',title:'CMB',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'5',useasdefault:false,name:'ame',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/ame_gal/',tiles_eq:'Lowcol_12000_EQ-tiles/',ext:'jpg',title:'Spinning Dust ',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'6',useasdefault:false,name:'free',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/freefree_gal/',tiles_eq:'Lowcol_12000_EQ-tiles/',ext:'jpg',title:'Hot gas',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 	  chromo.addWavelength({key:'7',useasdefault:false,name:'sync',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/sync_gal/',tiles_eq:'Lowcol_12000_EQ-tiles/',ext:'jpg',title:'Synchrotron',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
-	  chromo.addWavelength({key:'8',useasdefault:false,name:'syncpol',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/syncpol_gal/',ext:'jpg',title:'Synchrotron Polarisation',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
+	  chromo.addWavelength({key:'8',useasdefault:false,name:'syncpol',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/syncpol_gal/',ext:'jpg',title:'Synchrotron Polarisation',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/M-A. Meville-Deschenes'});
+	  chromo.addWavelength({key:'9',useasdefault:false,name:'synccolourpol',tiles:'Sync-colour-pol-tiles/',ext:'jpg',title:'Synchrotron Polarisation (Colourised)',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/P. Leahy'});
 	  chromo.addWavelength({key:'a',useasdefault:false,name:'composite',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/Planck-rgb-hires/',tiles_eq:'Planck_EQ-tiles/',ext:'jpg',title:'Composite',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});
 
 	  // Annotation layers will be shown at all wavelengths ('c' and 'p' are reserved for these)
@@ -157,8 +158,8 @@
 	slightly polarised. The direction of this polarisation tells us
 	the orientation of the Galaxy's magnetic field.</p>
 	<p>The texture used to display the polarisation direction was
-	originally produced by Marc-Antoine Meville-Deschenes, at IAS
-	(Paris).</p>
+	originally produced by Marc-Antoine Meville-Deschenes (IAS
+	Paris).</p>
     </div>
     <div class="chromo_popup overlay_info" style="display:none" id="moreinfo-low_overlay">
       <h4 class="info">Low frequency foregrounds</h4>
@@ -202,7 +203,12 @@
 	as the light is oriented to the direction of the magnetic
 	field. This means that the synchroton emission maps out the
 	magnetic field in our galaxy projected onto the sky, though
-	the 3D structure is harder to deduce.</p>
+	the 3D structure is harder to deduce.</p><p>In the
+	"colourised" version of the polarisation image the
+	polarisation direction is indicated by the magnetic field
+	direction (red = vertical, blue = horizontal).</p><p>The
+	colourised image was made by Paddy Leahy (University of
+	Manchester).</p>
     </div>
     <div class="chromo_popup overlay_info" style="display:none" id="moreinfo-co_overlay">
 	<h4 class="info">Carbon Monoxide</h4>
