@@ -37,7 +37,7 @@
 
 	  // Set up the Chromoscope
 	  $(document).ready(function(){
-	  chromo = $.chromoscope({showintro:true,showshare:true,showabout:false,showlangs:false,showcontext:false,showversion:false});
+	  chromo = $.chromoscope({showintro:true,showshare:true,showabout:false,showlangs:false,showcontext:false,showversion:false,dir:'chromoscope/resources/'});
 	  // The spectral bands should be in order
 	  chromo.addWavelength({key:'1',useasdefault:false,name:'dustpol',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dustpol_gal/',tiles_eq:'Dustcol_12000_EQ-tiles/',ext:'jpg',title:'Dust Polarisation',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/M-A. Meville-Deschenes'});
 	  chromo.addWavelength({key:'2',useasdefault:false,name:'dust',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/dust_gal/',tiles_eq:'Dustcol_12000_EQ-tiles/',ext:'jpg',title:'Dust',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>'});

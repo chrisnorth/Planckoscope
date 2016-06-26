@@ -27,7 +27,7 @@
 	  
 	  // Set up the Chromoscope
 	  $(document).ready(function(){
-	  chromo = $.chromoscope({showintro:false,showshare:false,showabout:false,showlangs:false,showcontext:false,showversion:false});
+	  chromo = $.chromoscope({showintro:false,showshare:false,showabout:false,showlangs:false,showcontext:false,showversion:false,dir:'chromoscope/resources/'});
 	  // The spectral bands should be in order
 	  chromo.addWavelength({key:'9',useasdefault:false,name:'857',tiles:'857_gal/',tiles_eq:'857col_12000_EQ-tiles/',ext:'jpg',title:'857 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
 	  chromo.addWavelength({key:'8',useasdefault:false,name:'545',tiles:'545_gal/',tiles_eq:'545col_12000_EQ-tiles/',ext:'jpg',title:'545 GHz',attribution:'<a href="http://www.esa.int/planck">ESA/Planck</a>/HFI'});
