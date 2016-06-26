@@ -1,11 +1,14 @@
 /*
- * Chromoscope v1.4.3
+ * Chromoscope v1.4.4
  * Written by Stuart Lowe for the Planck/Herschel Royal Society
  * Summer Exhibition 2009. Developed as an educational resource.
  *
  * This application will run locally or can be run on a web
  * server. To run locally you'll need to download the appropriate 
  * tile sets and code.
+ *
+ * Changes in version 1.4.4 (2014-03-22):
+ *   - Bug fix for showintro
  *
  * Changes in version 1.4.3 (2013-03-19):
  *   - Allow tile sets for two coordinate systems
@@ -88,8 +91,13 @@ jQuery.query = function() {
 		this.tidx = 0;			// Current index of the times array
 		this.clock = 0;			// Holds the time
 
+		this.iswii = (navigator && navigator.platform == "Nintendo Wii") ? true : false;
+		this.istouch = ('ontouchstart' in document.documentElement);
+		this.isfilter = (typeof document.createElement("div").style.filter != 'undefined');
+   
+
 		// Language Settings
-		this.lang = (navigator.language||navigatior.userLanguage||navigator.systemLanguage||browser.language);			// Set the user language
+		this.lang = (navigator) ? (navigator.userLanguage||navigator.systemLanguage||navigator.language||browser.language) : "";			// Set the user language
 		this.langshort = (this.lang.indexOf('-') > 0 ? this.lang.substring(0,this.lang.indexOf('-')) : this.lang.substring(0,2));
 		this.langs = new Array();
 		// Country codes at http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
@@ -167,7 +175,7 @@ jQuery.query = function() {
 	// that case the intro message can be confusing to the person following the link.
 	Chromoscope.prototype.init = function(inp){
 		//console.log("Time to start init:" + (new Date() - this.start) + "ms");
-		if(this.q.showintro) this.showintro = (this.q.showintro == "true") ? true : false;
+		if(this.q.showintro) this.showintro = (this.q.showintro == "true") ? true : (this.q.showintro == "false") ? false : this.showintro;
 		else{
 			if(this.q.length > 0) this.showintro = false;
 		}
@@ -292,10 +300,11 @@ jQuery.query = function() {
 	Chromoscope.prototype.changeLanguage = function(data){
 		this.phrasebook = new Language(data);
 		this.langshort = this.phrasebook.code;
-	        this.buildHelp(true);
+		this.buildHelp(true);
 		this.buildLinks();
 		this.buildLang();
 		if(this.showintro) this.buildIntro();
+
 		this.makeWavelengthSlider();
 		if(this.showversion) $(this.body+" .chromo_version").html(this.phrasebook.version+" "+this.version);
 		if($.browser.opera && $.browser.version == 9.3){ $(".keyboard").hide(); $(".nokeyboard").show(); }
@@ -485,7 +494,7 @@ jQuery.query = function() {
 			if(!chromo) return;
 			if(chromo.clickTimeout) clearTimeout(chromo.clickTimeout);
 			// Bind the double tap to double click
-			if('ontouchstart' in document.documentElement){
+			if(chromo.istouch){
 				var delay = 500;
 				var now = (new Date()).getTime();
 				if(!this.lastTouch) this.lastTouch = now + 1;
@@ -552,22 +561,24 @@ jQuery.query = function() {
 		//console.log("Time to end register keys:" + (new Date() - this.start) + "ms");
 
 		// If we have a touch screen browser, we should convert touch events into mouse events.
-		if('ontouchstart' in document.documentElement) $(this.body+" .chromo_outerDiv").addTouch();
+		if(this.istouch) $(this.body+" .chromo_outerDiv").addTouch();
 
 		this.setViewport();
 
 		// For a Wii make text bigger, hide annotation layer and keyboard shortcuts
-		if(navigator.platform == "Nintendo Wii" || ('ontouchstart' in document.documentElement && (this.wide <= 800 || this.tall < 600))){ $(this.body+" .chromo_layerswitcher").css({'font-size':'0.9em'}); this.annotations = ""; $(".keyboard").css({'display':'none'}); $(".nokeyboard").css({'display':'show'}); this.wavelength_load_range = 0; this.spatial_preload = 1; }
-		if(navigator.platform == "Nintendo Wii") $(this.body+" .chromo_layerswitcher").css({'font-size':'1.5em'});
+		if(this.iswii || (this.istouch && (this.wide <= 800 || this.tall < 600))){ $(this.body+" .chromo_layerswitcher").css({'font-size':'0.9em'}); this.annotations = ""; $(".keyboard").css({'display':'none'}); $(".nokeyboard").css({'display':'show'}); this.wavelength_load_range = 0; this.spatial_preload = 1; }
+		if(this.iswii) $(this.body+" .chromo_layerswitcher").css({'font-size':'1.5em'});
 
 		//console.log("Time to start set mag:" + (new Date() - this.start) + "ms");
 
 		// Set the default zoom level
 		this.setMagnification(this.zoom);
+
 		this.buildHelp();
 		this.buildLinks();
 		this.buildLang();
 		if(this.showintro) this.buildIntro();
+		else $(this.body+" .chromo_message").hide();
 
 		//console.log("Time to end intro:" + (new Date() - this.start) + "ms");
 		//console.log("Time to end context:" + (new Date() - this.start) + "ms");
@@ -675,6 +686,7 @@ jQuery.query = function() {
 	}
 	// Construct the Help box
 	Chromoscope.prototype.buildHelp = function(overwrite){
+
 		// Construct the help box
 		var txt = this.phrasebook.helpdesc;
 		if(this.phrasebook.translator) txt += '<br /><br />'+this.phrasebook.name+': '+this.phrasebook.translator;
@@ -950,8 +962,8 @@ jQuery.query = function() {
 		if(typeof input.key=="string"){
 			var character = input.key;
 			this.registerKey(input.key,function(){
-			    this.toggleAnnotationsByName(character);
-			    this.checkTiles(true);
+				this.toggleAnnotationsByName(character);
+				this.checkTiles(true);
 			});
 		}
 		return this;
@@ -1008,7 +1020,7 @@ jQuery.query = function() {
 		var h = $(this.body+" .legend-"+this.spectrum[0].key).outerHeight();
 		var y = h;
 
-		if('ontouchstart' in document.documentElement){
+		if(this.istouch){
 			while(y < 25) y = parseInt(y*1.8);
 		}
 
@@ -1050,7 +1062,7 @@ jQuery.query = function() {
 	// Construct the wavelength slider and give it mouse events
 	Chromoscope.prototype.makeZoomControl = function(){
 		var h = $(this.body+" .chromo_slider").width();
-		var fs = ('ontouchstart' in document.documentElement) ? 1.2 : 1;
+		var fs = (this.istouch) ? 1.2 : 1;
 		var zoomer = "<div class=\"chromo_zoomer\"><div class=\"chromo_zoom chromo_zoomin\" title=\""+this.phrasebook.zoomin+"\">+</div><div class=\"chromo_zoom chromo_zoomout\" title=\""+this.phrasebook.zoomout+"\">&minus;</div></div>";
 		$(this.body+" .chromo_layerswitcher").append(zoomer);
 		$(this.body+" .chromo_zoom").css({cursor:"pointer",padding:"0px",width:"100%",height:h+"px","line-height":h+"px","text-align":"center"});
@@ -1074,7 +1086,7 @@ jQuery.query = function() {
 			setOpacity($(this.body+" ."+a.name),a.opacity);
 		}
 		$(this.body+" .chromo_innerDiv").append('<span class="map kml pinholder"></span>');
-	    $(this.body+" .pinholder").css({"z-index":this.spectrum.length+this.annotations.length+1,left:0,top:0,width:this.mapSize*2,height:this.mapSize,position:'absolute',display:'none'});
+		$(this.body+" .pinholder").css({"z-index":this.spectrum.length+this.annotations.length+1,left:0,top:0,width:this.mapSize*2,height:this.mapSize,position:'absolute'});
 	}
 
 	// Hide any element by the ID or style.
@@ -1339,7 +1351,7 @@ jQuery.query = function() {
 								var tiles = this.spectrum[idx].tiles;
 								tiles = (typeof tiles=="string") ? tiles : (typeof tiles["z"+this.zoom]=="string") ? tiles["z"+this.zoom] : tiles.z;
 								var img = (inrange) ? this.cdn+tiles+visibleTiles[v].src+'.'+this.spectrum[idx].ext : this.spectrum[idx].blank;
-								extrastyle = (jQuery.browser.msie) ? 'filter:alpha(opacity='+(this.spectrum[idx].opacity/100)+')' : '';
+								extrastyle = (this.isfilter) ? 'filter:alpha(opacity='+(this.spectrum[idx].opacity*100)+')' : '';
 								output += '<img src="'+img+'" id="'+tileName+'" class="tile" style="position:absolute;left:'+(visibleTiles[v].x * this.tileSize)+'px; top:'+(visibleTiles[v].y * this.tileSize) +'px; '+extrastyle+'" />\n';
 							} else {
 								if(this.annotations[-(idx+1)].limitrange){
@@ -1349,7 +1361,7 @@ jQuery.query = function() {
 								var tiles = this.annotations[-(idx+1)].tiles;
 								tiles = (typeof tiles=="string") ? tiles : (typeof tiles["z"+this.zoom]=="string") ? tiles["z"+this.zoom] : tiles.z;
 								var img = (inrange) ? this.cdn+tiles+visibleTiles[v].src+'.'+this.annotations[-(idx+1)].ext : this.spectrum[idx].blank;
-								extrastyle = (jQuery.browser.msie) ? 'filter:alpha(opacity='+(this.annotations[-(idx+1)].opacity/100)+')' : '';
+								extrastyle = (this.isfilter) ? 'filter:alpha(opacity='+(this.annotations[-(idx+1)].opacity*100)+')' : '';
 								output += '<img src="'+img+'" id="'+tileName+'" class="tile" style="position:absolute;left:'+(visibleTiles[v].x * this.tileSize)+'px; top:'+(visibleTiles[v].y * this.tileSize) +'px; '+extrastyle+'" />\n';
 							}
 						}
@@ -1582,7 +1594,8 @@ jQuery.query = function() {
 					setOpacity($(this.body+" ."+this.spectrum[idx].name),0);
 				}
 				if(idx == low || idx == high){
-					newOpacity = (idx == low) ? (1-(this.lambda-low)).toFixed(2) : (1+(this.lambda-high)).toFixed(2);
+					//newOpacity = (idx == low) ? (1-(this.lambda-low)).toFixed(2) : (1+(this.lambda-high)).toFixed(2);
+					newOpacity = (idx == low) ? 1 : (1+(this.lambda-high)).toFixed(2);
 					newOpacity = Math.min(this.maxOpacity,Math.max(this.minOpacity, newOpacity));
 					this.spectrum[idx].opacity = newOpacity;
 					setOpacity($(this.body+" ."+this.spectrum[idx].name),newOpacity);
@@ -1631,7 +1644,6 @@ jQuery.query = function() {
 		if(!character) return;
 		for(var i=0 ; i < this.annotations.length ; i++){
 			if(character == this.annotations[i].key){
-			    //console.log('toggle annotation',character);
 				if(getOpacity($(this.body+" ."+this.annotations[i].name)) == this.annotations[i].opacity) setOpacity($(this.body+" ."+this.annotations[i].name),0);
 				else setOpacity($(this.body+" ."+this.annotations[i].name),this.annotations[i].opacity);
 			}
@@ -1891,7 +1903,7 @@ jQuery.query = function() {
 	Chromoscope.prototype.createClose = function(type){
 		var w = 28;
 		// In the case of the Wii or a small touch screen we should make the close control larger
-		if(navigator.platform == "Nintendo Wii" || ('ontouchstart' in document.documentElement && (this.wide <= 800 || this.tall <= 600))) w *= 2;
+		if(this.iswii || (this.istouch && (this.wide <= 800 || this.tall <= 600))) w *= 2;
 		return '<span class="chromo_close"><img src="'+this.dir+'close.png" style="width:'+w+'px;" title="'+this.phrasebook.closedesc+'" /></span>';
 	}
 
@@ -2384,7 +2396,7 @@ jQuery.query = function() {
 // Usage: getOpacity($("#chromo_message"))
 function getOpacity(el){
 	if(typeof el=="string") el = $(el);
-	if(jQuery.browser.msie) return (el.css("filter").replace(/[^0-9.]*/g,""))/100;
+	if(this.isfilter) return (el.css("filter").replace(/[^0-9.]*/g,""))/100;
 	else return parseFloat(el.css("opacity")).toFixed(3); // Only need 3dp precision - this stops floating point errors in Chrome
 }
 
@@ -2392,7 +2404,7 @@ function getOpacity(el){
 // Usage: setOpacity($("#chromo_message"),0.4)
 function setOpacity(el,opacity){
 	if(typeof el=="string") el = $(el);
-	if(jQuery.browser.msie){
+	if(this.isfilter){
 		el.css("filter","alpha(opacity="+Math.floor(opacity*100)+")");
 		el.children().css("filter","alpha(opacity="+Math.floor(opacity*100)+")");
 	}else el.css("opacity",opacity);
