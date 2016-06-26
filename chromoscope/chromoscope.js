@@ -1,5 +1,5 @@
 /*
- * Chromoscope v1.4.4
+ * Chromoscope v1.4.5
  * Written by Stuart Lowe for the Planck/Herschel Royal Society
  * Summer Exhibition 2009. Developed as an educational resource.
  *
@@ -7,6 +7,10 @@
  * server. To run locally you'll need to download the appropriate 
  * tile sets and code.
  *
+ * Changes in version 1.4.5 (2016-06-26):
+ *   - Update help function
+ *   - registering a key now over-writes any existing properties for that key
+ * 
  * Changes in version 1.4.4 (2014-03-22):
  *   - Bug fix for showintro
  *
@@ -712,7 +716,16 @@ jQuery.query = function() {
 		}
 		for(var i=0 ; i < this.annotations.length ; i++){
 			if(this.annotations[i].key){
-				var s = this.phrasebook.switchannotation.replace("__ANNOTATION__",this.phrasebook[this.annotations[i].title])
+				//NEW: Do the same with annotations as with wavelengths
+				if(typeof this.annotations[i].title=="object"){
+					var l = (!this.annotations[i].title[this.langshort]) ? 'en' : this.langshort;
+					var t = this.annotations[i].title[l]
+				}else{
+					if(this.phrasebook[this.annotations[i].title]) var t = this.phrasebook[this.annotations[i].title];
+					else var t = this.annotations[i].title;
+				}
+				var s = this.phrasebook.switchannotation.replace("__ANNOTATION__",t)
+				//END
 				keys += this.buildKeyItem(this.annotations[i].key,s);
 			}
 		}
@@ -721,6 +734,7 @@ jQuery.query = function() {
 		keys += this.buildKeyItem("&darr;",this.phrasebook.down);
 		keys += this.buildKeyItem("+",this.phrasebook.zoomin);
 		keys += this.buildKeyItem("&minus;",this.phrasebook.zoomout);
+		for(i = 0 ; i < this.keys.length ; i++) keys += (this.keys[i].txt) ? this.buildKeyItem(String.fromCharCode(this.keys[i].charCode),this.keys[i].txt) : "";
 		$(this.body+" .chromo_controlbuttons").html(buttons);
 		$(this.body+" .chromo_controlkeys").html(keys);
 
@@ -847,20 +861,16 @@ jQuery.query = function() {
 			ch = (typeof charCode[c]=="string") ? charCode[c].charCodeAt(0) : charCode[c];
 			available = true;
 			for(i = 0 ; i < this.keys.length ; i++){
-				if(this.keys.charCode == ch) available = false;
-			}
-			if(available){
-				this.keys.push({charCode:ch,char:String.fromCharCode(ch),fn:fn,txt:txt});
-				if(this.phrasebook.alignment=="right"){
-					a = '<strong>'+String.fromCharCode(ch)+'</strong>'
-					b = txt;
-				}else{
-					b = '<strong>'+String.fromCharCode(ch)+'</strong>'
-					a = txt;
+				if(this.keys[i].charCode == ch){
+					available = false;
+					this.keys[i] = {charCode:ch,char:String.fromCharCode(ch),fn:fn,txt:txt};
+					continue;
 				}
-				if(txt) $(this.body+" .chromo_controlkeys").append('<li>'+a+' - '+b+'</li>');
 			}
+			if(available) this.keys.push({charCode:ch,char:String.fromCharCode(ch),fn:fn,txt:txt});
 		}
+		// Update the HTML screen
+		this.buildHelp(true)
 		return this;
 	}
 
