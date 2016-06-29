@@ -81,6 +81,7 @@ jQuery.query = function() {
 		this.l;				// Set the Galactic longitude via the init function
 		this.b;				// Set the Galactic latitude via the init function
 		this.lambda = 0;		// Current pseudo-wavelength
+		this.alt = false;	// Flag for using an alternate tile set (set in the config with "tiles_alt"); useful for polarization toggle
 
 		// Variables
 		this.tileSize = 256;		// In pixels
@@ -560,7 +561,13 @@ jQuery.query = function() {
 			$(this.body+" .chromo_help").hide();
 			$(this.body+" .chromo_info").hide();
 			$(this.body+" .chromo_pingroups_list").toggle();
-		});
+		}).registerKey('q',function(){
+			// Key to switch to alternate tile set
+			if(this.hasalt){
+				this.alt = !this.alt;
+				this.checkTiles();
+			}
+		},'toggle polarisation');
 
 		//console.log("Time to end register keys:" + (new Date() - this.start) + "ms");
 
@@ -604,6 +611,15 @@ jQuery.query = function() {
 		else{ this.getLanguage(this.langshort); }
 
 		//console.log("Time to end language:" + (new Date() - this.start) + "ms");
+
+		// Loop over the different layer types and work out if we actually have an alternate tile set specified
+		this.hasalt = false;
+		for(var i = 0; i < this.spectrum.length; i++){
+			if(this.spectrum[i].tiles_alt){ this.hasalt = true; continue; }
+		}
+		for(var i = 0; i < this.annotations.length; i++){
+			if(this.annotations[i].tiles_alt){ this.hasalt = true; continue; }
+		}
 
 		if(this.spectrum.length == 0){
 			$(this.body+" .chromo_message").css({width:"400px"});
@@ -941,6 +957,7 @@ jQuery.query = function() {
 			this.key = (input.key) ? input.key : '';
 			this.tiles = (input.tiles) ? input.tiles : '';
 			this.tiles_eq = (input.tiles_eq) ? input.tiles_eq : '';
+			this.tiles_alt = (input.tiles_alt) ? input.tiles_alt : '';
 			this.ext = (input.ext) ? input.ext : 'jpg';
 			this.range = {longitude:[-180,180],latitude:[-90,90],x:[0,0],y:[0,0]};
 			this.limitrange = false;
@@ -1266,6 +1283,9 @@ jQuery.query = function() {
 		$(this.body+' '+el).css({left:(this.wide-$(this.body+' '+el).outerWidth())/2,top:(this.tall-$(this.body+' '+el).outerHeight())/2});
 	}
 
+	Chromoscope.prototype.getTileSet = function(t,i){
+		return (this.alt) ? (this[t][i].tiles_alt ? this[t][i].tiles_alt : this[t][i].tiles) : this[t][i].tiles;
+	}
 	// Check which tiles should be visible in the innerDiv
 	Chromoscope.prototype.checkTiles = function(changeForced){
 
@@ -1273,9 +1293,10 @@ jQuery.query = function() {
 		var changeW = (this.minlambda != this.previousMinLambda || this.maxlambda != this.previousMaxLambda) ? true : false;
 		var changeXY = (visibleRange.xstart != this.previousRange.xstart || visibleRange.ystart != this.previousRange.ystart) ? true : false;
 		var changeZ = (this.zoom == this.previousZoom) ? false : true;
+		var changeAlt = (this.alt == this.previousAlt) ? false : true;
 
 		// Has the range changed?
-		if(changeXY || changeW || changeZ || changeForced){
+		if(changeXY || changeW || changeZ || changeAlt || changeForced){
 
 			// If the zoom level has changed, we should 
 			// remove all tiles instantly
@@ -1346,36 +1367,53 @@ jQuery.query = function() {
 
 					// Check if this tile was previously loaded
 					var match = false;
+					// If we haven't changed to our alternate tile set we check the previous 
+					// tiles to see if we've already got this one
 					for (var p = 0; p < this.previousTilesMap.length; p++) {
 						if(this.previousTilesMap[p] == tileName){ match = true; break; }
 					}
+
 					// Did not exist before so needs to be added
+					var tiles,img;
+					if(!match || changeAlt){
+						// Are we in the specific range for this layer
+						if ($("#"+tileName).length == 0) inrange = true;
+					
+						if(idx >= 0){
+							tiles = this.getTileSet('spectrum',idx);
+						}else{
+							tiles = this.getTileSet('annotations',-(idx+1));
+						}
+						tiles = (typeof tiles=="string") ? tiles : (typeof tiles["z"+this.zoom]=="string") ? tiles["z"+this.zoom] : tiles.z;
+						
+						if(idx >= 0){
+							if(this.spectrum[idx].limitrange){
+								// Check if the x,y coordinates for this tile are within the user-defined range
+								if(((visibleTiles[v].x+pixels)%pixels)+1 <= (this.spectrum[idx].range.x[1]) || ((visibleTiles[v].x+pixels)%pixels) >= this.spectrum[idx].range.x[0] || visibleTiles[v].y >= this.spectrum[idx].range.y[0] || visibleTiles[v].y <= this.spectrum[idx].range.y[1]-1) inrange = false;
+							}
+							img = (inrange) ? this.cdn+tiles+visibleTiles[v].src+'.'+this.spectrum[idx].ext : this.spectrum[idx].blank;
+						}else{
+							if(this.annotations[-(idx+1)].limitrange){
+								// Check if the x,y coordinates for this tile are within the user-defined range
+								if(((visibleTiles[v].x+pixels)%pixels)+1 <= (this.annotations[-(idx+1)].range.x[1]) || ((visibleTiles[v].x+pixels)%pixels) >= this.annotations[-(idx+1)].range.x[0] || visibleTiles[v].y >= this.annotations[-(idx+1)].range.y[0] || visibleTiles[v].y <= this.annotations[-(idx+1)].range.y[1]-1) inrange = false;
+							}
+							img = (inrange) ? this.cdn+tiles+visibleTiles[v].src+'.'+this.annotations[-(idx+1)].ext : this.spectrum[idx].blank;
+						}
+					}
 					if(!match){
 						if ($("#"+tileName).length == 0) {
 							inrange = true;
 							if(idx >= 0){
-								if(this.spectrum[idx].limitrange){
-									// Check if the x,y coordinates for this tile are within the user-defined range
-									if(((visibleTiles[v].x+pixels)%pixels)+1 <= (this.spectrum[idx].range.x[1]) || ((visibleTiles[v].x+pixels)%pixels) >= this.spectrum[idx].range.x[0] || visibleTiles[v].y >= this.spectrum[idx].range.y[0] || visibleTiles[v].y <= this.spectrum[idx].range.y[1]-1) inrange = false;
-								}
-								var tiles = this.spectrum[idx].tiles;
-								tiles = (typeof tiles=="string") ? tiles : (typeof tiles["z"+this.zoom]=="string") ? tiles["z"+this.zoom] : tiles.z;
-								var img = (inrange) ? this.cdn+tiles+visibleTiles[v].src+'.'+this.spectrum[idx].ext : this.spectrum[idx].blank;
 								extrastyle = (this.isfilter) ? 'filter:alpha(opacity='+(this.spectrum[idx].opacity*100)+')' : '';
 								output += '<img src="'+img+'" id="'+tileName+'" class="tile" style="position:absolute;left:'+(visibleTiles[v].x * this.tileSize)+'px; top:'+(visibleTiles[v].y * this.tileSize) +'px; '+extrastyle+'" />\n';
 							} else {
-								if(this.annotations[-(idx+1)].limitrange){
-									// Check if the x,y coordinates for this tile are within the user-defined range
-									if(((visibleTiles[v].x+pixels)%pixels)+1 <= (this.annotations[-(idx+1)].range.x[1]) || ((visibleTiles[v].x+pixels)%pixels) >= this.annotations[-(idx+1)].range.x[0] || visibleTiles[v].y >= this.annotations[-(idx+1)].range.y[0] || visibleTiles[v].y <= this.annotations[-(idx+1)].range.y[1]-1) inrange = false;
-								}
-								var tiles = this.annotations[-(idx+1)].tiles;
-								tiles = (typeof tiles=="string") ? tiles : (typeof tiles["z"+this.zoom]=="string") ? tiles["z"+this.zoom] : tiles.z;
-								var img = (inrange) ? this.cdn+tiles+visibleTiles[v].src+'.'+this.annotations[-(idx+1)].ext : this.spectrum[idx].blank;
 								extrastyle = (this.isfilter) ? 'filter:alpha(opacity='+(this.annotations[-(idx+1)].opacity*100)+')' : '';
 								output += '<img src="'+img+'" id="'+tileName+'" class="tile" style="position:absolute;left:'+(visibleTiles[v].x * this.tileSize)+'px; top:'+(visibleTiles[v].y * this.tileSize) +'px; '+extrastyle+'" />\n';
 							}
 						}
 					}
+					// Alternatively, if we've switched to an alternate tile set, we just need to update the img src
+					if(changeAlt) $('#'+tileName).attr('src',img);
 				}
 				// Write the layer
 				if(idx >= 0) $(this.body+" ."+this.spectrum[idx].name).append(output);
