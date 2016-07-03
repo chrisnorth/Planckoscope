@@ -92,6 +92,7 @@ function setupPlanck(){
 		$(this.body+" #kiosk").toggle();
 		$(this.body+" #overlay").toggle();
 		$(this.body+" #coord_form").toggle();
+		$(this.body+' .chromo_polarisation_toggle').toggle();
     });
 
     chromo.registerKey(38,function(){ // user presses the down arrow key  (37 was left)
