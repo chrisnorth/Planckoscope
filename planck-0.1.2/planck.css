@@ -36,6 +36,25 @@ img.map { opacity: 1; }
 	width: 170px;
 	text-align: center;
 }
+.chromo_polarisation_toggle {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 99;
+	text-align: right;
+	font-family: Arial, sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	margin: 10px 5px 10px 10px;
+	text-shadow: 2px 2px 8px black;
+}
+.chromo_polarisation_toggle input[type=checkbox] {
+	position: absolute;
+	width: 2.2em;
+	height: 2.2em;
+	top: -0.5em;
+	box-shadow: 2px 2px 8px #333;
+}
 .chromo_layerswitcher {
 	font-family: Arial, sans-serif;
 	font-size: 0.9em;

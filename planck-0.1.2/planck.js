@@ -47,6 +47,32 @@ function setupPlanck(){
     //process overlays
     //chromo.processOverlays();
 
+	// Add polarisation toggle if we have alternate tiles
+	if(chromo.hasalt){
+		// Shift the layer slider down so we have space for our toggle
+		var switcher = $('.chromo_layerswitcher');
+		switcher.css({'top':'2em'});
+		// Add DOM elements (label and checkbox)
+		$(chromo.body).append('<div class="chromo_polarisation_toggle"><span>Polarisation</span><input type="checkbox" id="chromo_polarisation_toggler" /></div>');
+		// Use the same right-hand padding as on the layer switcher
+		$('.chromo_polarisation_toggle').css({'padding-right':switcher.css('padding-right')});
+
+		// Update keypress for polarisation toggle
+		chromo.registerKey('q',function(){
+			// Key to switch to alternate tile set
+			if(this.hasalt){
+				this.alt = !this.alt;
+				this.checkTiles();
+				$('#chromo_polarisation_toggler').prop('checked',this.alt);
+			}
+		},'toggle polarisation');
+	
+		// Add function to the checkbox to toggle the alternate tile set
+		$('#chromo_polarisation_toggler').on('change',{me:chromo},function(e){
+			e.data.me.alt = $(this).prop('checked');
+			e.data.me.checkTiles();
+		});
+	}
 
     //*******************
     //re-register keys
