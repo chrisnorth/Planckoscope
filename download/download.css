@@ -175,8 +175,50 @@ a:hover{
     -moz-transition:all 0.2s linear;
     -o-transition:all 0.2s linear;
 }
+.tilebox .img-link{
+    position:absolute;
+    display:block;
+    width:100%;
+    left:0px;
+    line-height:1.2em;
+    top:-3em;
+    background-color:black;
+    opacity:0.8;
+    margin:0px;
+    padding-bottom:3px;
+    z-index:60;
+    transition:all 0.2s linear;
+    -webkit-transition:all 0.2s linear;
+    -moz-transition:all 0.2s linear;
+    -o-transition:all 0.2s linear;
+}
 
+.tilebox .img-link.box-on{
+    top:1.5em;
+}
 .tilebox .desc.box-on{
     bottom:1.5em;
 }
-
+@media(max-width:900px){
+    .page{
+        width:100%;
+    }
+    .tilebox-outer{
+        width:30%;
+        padding:10px 1.5%;
+    }
+    .tilebox{
+        width:100%;
+    }
+}
+@media(max-width:800px){
+    .tilebox-outer{
+        width:45%;
+        padding: 10px 2.5%;
+    }
+}
+@media(max-width:600px){
+    .tilebox-outer{
+        width:95%;
+    }
+}
